@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `sphelp`.`Atendimento` (
   `Chamado_i` INT NOT NULL,
   `Usuario_i` INT NOT NULL,
   `relatorio` LONGTEXT NOT NULL,
-  `dateRetorno` VARCHAR(250) NULL,
+  `dataRetorno` VARCHAR(250) NULL,
   PRIMARY KEY (`_i`),
   UNIQUE INDEX `_i_UNIQUE` (`_i` ASC),
   INDEX `FK_Atendimento$Chamado_i_idx` (`Chamado_i` ASC),
