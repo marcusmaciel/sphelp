@@ -1,0 +1,12 @@
+USE sphelp;
+/*create table*/
+CREATE TABLE IF NOT EXISTS `sphelp`.`Configuracao` (
+  `_i` INT NOT NULL AUTO_INCREMENT,
+  `_s` VARCHAR(50) NOT NULL DEFAULT 'ativo',
+  `_d` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `descricao` VARCHAR(100) NOT NULL,
+  `chave` VARCHAR(100) NOT NULL,
+  `valor` LONGTEXT NOT NULL,
+  PRIMARY KEY (`_i`),
+  UNIQUE INDEX `_i_UNIQUE` (`_i` ASC))
+ENGINE = InnoDB;
