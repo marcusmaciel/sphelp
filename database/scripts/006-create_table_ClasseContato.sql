@@ -1,6 +1,6 @@
 USE sphelp;
 /*create table*/
-CREATE TABLE IF NOT EXISTS `sphelp`.`TipoContato` (
+CREATE TABLE IF NOT EXISTS `sphelp`.`ClasseContato` (
   `_i` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`_i`),
