@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <?php if ($head) echo $head; ?>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-green sidebar-mini">
         <div class="wrapper">
-            <?php if ($mainHeader) echo $mainHeader; ?>
-            <?php if ($mainSidebar) echo $mainSidebar; ?>
-            <?php if ($contentWrapper) echo $contentWrapper; ?>
-            <?php if ($mainFooter) echo $mainFooter; ?>
-            <?php if ($loginPage) echo $loginPage; ?>
+            <?php if (isset($mainHeader)) echo $mainHeader; ?>
+            <?php if (isset($mainSidebar)) echo $mainSidebar; ?>
+            <?php if (isset($contentWrapper)) echo $contentWrapper; ?>
+            <?php if (isset($mainFooter)) echo $mainFooter; ?>
+            <?php if (isset($loginPage)) echo $loginPage; ?>
         </div>
         <?php if ($scripts) echo $scripts; ?>
     </body>

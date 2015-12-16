@@ -1,0 +1,33 @@
+/*modulo/loginPage*/
+.sp-login-page{
+    background: url("../img/bgr.svg") center center;
+    background-size:cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: all 0.2s ease-in-out;
+}
+.sp-login-page .sp-login-box{
+    max-width: 320px;
+    height: auto;
+    display: block;
+    padding: 15px;
+}
+.sp-login-box .logo{
+    width: 100%;
+    height: 100px;
+    padding-bottom: 15px;
+    text-align: center;
+    position: relative;
+}
+.sp-login-box .logo img{
+    max-height: 100%;
+    max-width: 100%;
+}
+.sp-login-box .form{
+    
+}
+/*modulo/loginPage*/

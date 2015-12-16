@@ -225,7 +225,7 @@
                                             <span class="direct-chat-name pull-left">Alexander Pierce</span>
                                             <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
                                         </div><!-- /.direct-chat-info -->
-                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+                                        <img class="direct-chat-img" src="assets/dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             Is this template really for free? That's unbelievable!
                                         </div><!-- /.direct-chat-text -->
@@ -237,7 +237,7 @@
                                             <span class="direct-chat-name pull-right">Sarah Bullock</span>
                                             <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
                                         </div><!-- /.direct-chat-info -->
-                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+                                        <img class="direct-chat-img" src="assets/dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             You better believe it!
                                         </div><!-- /.direct-chat-text -->
@@ -249,7 +249,7 @@
                                             <span class="direct-chat-name pull-left">Alexander Pierce</span>
                                             <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
                                         </div><!-- /.direct-chat-info -->
-                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+                                        <img class="direct-chat-img" src="assets/dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             Working with AdminLTE on a great new app! Wanna join?
                                         </div><!-- /.direct-chat-text -->
@@ -261,7 +261,7 @@
                                             <span class="direct-chat-name pull-right">Sarah Bullock</span>
                                             <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
                                         </div><!-- /.direct-chat-info -->
-                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+                                        <img class="direct-chat-img" src="assets/dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             I would love to.
                                         </div><!-- /.direct-chat-text -->
@@ -274,7 +274,7 @@
                                     <ul class="contacts-list">
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg">
+                                                <img class="contacts-list-img" src="assets/dist/img/user1-128x128.jpg">
                                                 <div class="contacts-list-info">
                                                     <span class="contacts-list-name">
                                                         Count Dracula
@@ -286,7 +286,7 @@
                                         </li><!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg">
+                                                <img class="contacts-list-img" src="assets/dist/img/user7-128x128.jpg">
                                                 <div class="contacts-list-info">
                                                     <span class="contacts-list-name">
                                                         Sarah Doe
@@ -298,7 +298,7 @@
                                         </li><!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg">
+                                                <img class="contacts-list-img" src="assets/dist/img/user3-128x128.jpg">
                                                 <div class="contacts-list-info">
                                                     <span class="contacts-list-name">
                                                         Nadia Jolie
@@ -310,7 +310,7 @@
                                         </li><!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg">
+                                                <img class="contacts-list-img" src="assets/dist/img/user5-128x128.jpg">
                                                 <div class="contacts-list-info">
                                                     <span class="contacts-list-name">
                                                         Nora S. Vans
@@ -322,7 +322,7 @@
                                         </li><!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg">
+                                                <img class="contacts-list-img" src="assets/dist/img/user6-128x128.jpg">
                                                 <div class="contacts-list-info">
                                                     <span class="contacts-list-name">
                                                         John K.
@@ -334,7 +334,7 @@
                                         </li><!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg">
+                                                <img class="contacts-list-img" src="assets/dist/img/user8-128x128.jpg">
                                                 <div class="contacts-list-info">
                                                     <span class="contacts-list-name">
                                                         Kenneth M.
