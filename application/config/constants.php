@@ -84,9 +84,5 @@ defined('EXIT_USER_INPUT') OR define('EXIT_USER_INPUT', 7); // invalid user inpu
 defined('EXIT_DATABASE') OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN') OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX') OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
-defined('LAYOUT_CSS') OR define('LAYOUT_CSS', 'assets/css/'); // stylesheet
-defined('LAYOUT_JS') OR define('LAYOUT_JS', 'assets/js/'); // javascript
-defined('LAYOUT_FONTS') OR define('LAYOUT_FONTS', 'assets/fonts/'); // fontface
-defined('LAYOUT_IMG') OR define('LAYOUT_IMG', 'assets/img/'); // system images
-defined('LAYOUT_API') OR define('LAYOUT_API', 'assets/api/'); // template api extension
+defined('LAYOUT_ASSETS') OR define('LAYOUT_ASSETS', 'assets/'); // assets(all element's from assets folder)
 
