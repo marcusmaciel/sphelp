@@ -3,8 +3,6 @@
 class ClasseContato_model extends CI_Model {
 
     var $_i = null;
-    var $_s = '';
-    var $_d = '';
     var $descricao = '';
 
     function __construct() {
