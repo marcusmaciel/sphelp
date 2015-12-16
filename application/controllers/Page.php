@@ -13,7 +13,7 @@ class Page extends CI_Controller {
         $this->template['head'] = $this->load->view('modulo/head', '', true);
         $this->template['scripts'] = $this->load->view('modulo/scripts', '', true);
 
-        $this->login();
+        $this->home();
     }
 
     private function home() {
