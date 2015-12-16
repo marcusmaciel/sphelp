@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <meta charset="utf-8" />
         <title>Dashboard</title>
         <link href="<?php echo LAYOUT_CSS; ?>bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="<?php echo LAYOUT_API; ?>jQuery/jQuery-2.1.4.min.js"></script>
     </head>
     <body>
     </body>
