@@ -15,13 +15,19 @@
                 <div class="box-body">
 
                     <div class="form-group">
-                        <label>Login</label>
-                        <input type="email" class="form-control" placeholder="admin">
+                        <label>
+                            <span>Login</span>
+                            <i class="fa fa-sign-in text-success"></i>
+                        </label>
+                        <input type="usuario" class="form-control" placeholder="admin">
                     </div>
 
                     <div class="form-group">
-                        <label>Senha</label>
-                        <input type="password" class="form-control" placeholder="**********">
+                        <label>
+                            <span>Senha</span>
+                            <i class="fa fa-unlock text-success"></i>
+                        </label>
+                        <input type="senha" class="form-control" placeholder="**********">
                     </div>
 
                 </div>
@@ -30,15 +36,27 @@
                 <div class="box-footer text-right">
                     <button type="submit" class="btn btn-success">Entrar</button>
                 </div>
-                
+
             </form>
-            
+
         </div>
 
         <footer class='callback'>
 
         </footer>
-        
+
     </div><!--sp-login-box-->
 
-</div>
+    <div class="sp-login-footer">
+
+        <div class="copyright">
+            &copy; SystemPort Technology Ltda - todos os direitos reservados.
+        </div><!--copyright-->
+
+        <div class="versao">
+            Versão <b>alpha</b>
+        </div><!--versao->
+        
+    </div><!--sp-login-footer-->
+
+    </div>

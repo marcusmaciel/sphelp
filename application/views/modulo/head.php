@@ -1,5 +1,6 @@
 <!--components/head-->
 <head>
+    <link rel="icon" type="image/png" href="<?php echo LAYOUT_ASSETS; ?>img/logo.png">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SPHelp</title>
