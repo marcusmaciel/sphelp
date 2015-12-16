@@ -13,7 +13,7 @@ class Usuario_model extends CI_Model {
     }
 
     public function getById($_i = null) {
-        
+        return 'asdadsa';
     }
 
     public function getAutenticar($login, $senha) {
