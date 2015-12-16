@@ -5,29 +5,33 @@ class ClienteModel extends CI_Model {
     var $_i = null;
     var $_s = '';
     var $_d = '';
-    var $primeiroNome = '';
-    var $segundoNome = '';
-    var $contrato = '';
-    var $cn = '';
-    var $email = '';
+    var $Cliente_i = null;
+    var $TipoContato_i = null;
+    var $ClasseContato_i = null;
+    var $descricao = '';
+    var $observacao = '';
 
     function __construct() {
         parent::__construct();
     }
 
-    public function getById($_i = null) {
+    public function getById($_i) {
         
     }
 
-    public function getByNome($nome) {
+    public function getByCliente($Cliente_i) {
         
     }
 
-    public function getByContrato($contrato) {
+    public function getByTipoContato($Cliente_i = null, $TipoContato_i) {
         
     }
 
-    public function getByCn($cn) {
+    public function getByClasseContato($Cliente_i = null, $ClasseContato_i) {
+        
+    }
+
+    public function getByDescricao($descricao) {
         
     }
 
