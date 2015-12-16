@@ -1,15 +1,13 @@
 <?php
 
-class ClienteModel extends CI_Model {
+class Configuracao_model extends CI_Model {
 
     var $_i = null;
     var $_s = '';
     var $_d = '';
-    var $primeiroNome = '';
-    var $segundoNome = '';
-    var $contrato = '';
-    var $cn = '';
-    var $email = '';
+    var $descricao = '';
+    var $chave = '';
+    var $valor = '';
 
     function __construct() {
         parent::__construct();
@@ -19,15 +17,15 @@ class ClienteModel extends CI_Model {
         
     }
 
-    public function getByNome($nome) {
+    public function getByDescricao($descricao) {
         
     }
 
-    public function getByContrato($contrato) {
+    public function getByChave($chave) {
         
     }
 
-    public function getByCn($cn) {
+    public function getByValor($valor) {
         
     }
 

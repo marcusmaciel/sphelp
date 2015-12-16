@@ -1,6 +1,6 @@
 <?php
 
-class AtendimentoModel extends CI_Model {
+class Atendimento_model extends CI_Model {
 
     var $_i = null;
     var $_s = '';

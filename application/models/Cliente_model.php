@@ -1,26 +1,21 @@
 <?php
 
-class ChamadoModel extends CI_Model {
+class Cliente_model extends CI_Model {
 
     var $_i = null;
     var $_s = '';
     var $_d = '';
-    var $Usuario_i = null;
     var $Cliente_i = null;
-    var $dataEnd = '';
+    var $TipoContato_i = null;
+    var $ClasseContato_i = null;
     var $descricao = '';
-    var $tag = '';
-    var $emailFeedback = '';
+    var $observacao = '';
 
     function __construct() {
         parent::__construct();
     }
 
-    public function getById($_i = null) {
-        
-    }
-
-    public function getByUsuario($Usuario_i) {
+    public function getById($_i) {
         
     }
 
@@ -28,19 +23,15 @@ class ChamadoModel extends CI_Model {
         
     }
 
-    public function getByDataCriado($dataIni, $dataEnd) {
+    public function getByTipoContato($Cliente_i = null, $TipoContato_i) {
         
     }
 
-    public function getByDataFinalizado($dataIni, $dataEnd) {
+    public function getByClasseContato($Cliente_i = null, $ClasseContato_i) {
         
     }
 
-    public function getByDescricao($tag) {
-        
-    }
-
-    public function getByTag($tag) {
+    public function getByDescricao($descricao) {
         
     }
 

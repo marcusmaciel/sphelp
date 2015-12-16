@@ -1,6 +1,6 @@
 <?php
 
-class ClasseContatoModel extends CI_Model {
+class ClasseContato_model extends CI_Model {
 
     var $_i = null;
     var $_s = '';
