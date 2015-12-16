@@ -33,7 +33,7 @@
     .sp-login-box .form-group label{
         display: flex;
         justify-content:space-between;
-        align-itens:center;
+        align-items: center;
     }
 .sp-login-page .sp-login-footer{
     position: absolute;
