@@ -20,13 +20,4 @@ class Usuario extends CI_Controller {
         }
     }
 
-    public function sessao() {
-        //carrega a sessão instanciada (tenta)
-        $sessao = $this->session->userdata('user_id');
-        //se não houver o ID da sessão, envia o usuário para a página de login
-        if (!$sessao) {
-            $this->load->view('modulo/loginPage');
-        };
-    }
-
 }
