@@ -1,5 +1,5 @@
 <!--modulo/loginPage-->
-<div class='sp-login-page'>
+<div class='sp-login-page' ng-controller="loginFormController">
 
     <div class='sp-login-box'>
 
