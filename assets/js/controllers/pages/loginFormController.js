@@ -9,14 +9,14 @@ define(function () {
 
         $scope.autenticar = function (form) {
             console.log(form);
-/*
-            $http.post('usuario/autenticar', frm)
-                .then(function (d) { //success
-                    console.log(d);
-                }, function (d) { //error
-                    console.log(d);
-                });
-*/
+            /*
+             $http.post('usuario/autenticar', frm)
+             .then(function (d) { //success
+             console.log(d);
+             }, function (d) { //error
+             console.log(d);
+             });
+             */
         };
 
     }

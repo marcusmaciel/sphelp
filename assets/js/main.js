@@ -68,7 +68,8 @@ require([
         'app.filters',
         'app.services',
         'app.values',
-        'ui.router'
+        'ui.router',
+        'ui.bootstrap'
     ]);
 
     return app;

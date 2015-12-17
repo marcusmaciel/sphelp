@@ -10,7 +10,7 @@
         <div class="box box-success">
 
             <!-- form start -->
-            <form name="loginForm" novalidate ng-submit="submitted && loginForm.$valid && autenticar(form)">
+            <form name="loginForm" novalidate ng-submit="loginForm.$valid && autenticar(form)">
 
                 <div class="box-body">
 
@@ -22,10 +22,8 @@
                         <input name="login" type="text" ng-model="form.login" 
                                class="form-control" placeholder="admin"
                                maxlength="50" required sp-pattern="/^\w+$/"
-                               uib-tooltip="Enter something in this input field to disable this tooltip"
-                               tooltip-placement="top"
-                               tooltip-trigger="mouseover"
-                               tooltip-enable="loginForm.login.$error" />
+                               uib-popover="campo obrigatório"
+                               popover-trigger="mouseenter"/>
                     </div>
 
                     <div class="form-group">
@@ -42,7 +40,7 @@
                 <!-- /.box-body -->
 
                 <div class="box-footer text-right">
-                    <button type="submit" ng-click="submitted = true" class="btn btn-success">Entrar</button>
+                    <button type="submit" class="btn btn-success">Entrar</button>
                 </div>
 
             </form>
