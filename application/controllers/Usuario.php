@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Controller {
 
-    //verofoca se o login, senha estão certos e se esse usuário está ativo
+    //ver se o login, senha estão certos e se esse usuário está ativo
     public function autenticar() {
         //carrega o módulo de usuário para tentar autenticar o mesmo
         $this->load->model('usuario_model', 'Usuario');
@@ -13,11 +13,17 @@ class Usuario extends CI_Controller {
         $auth = $this->Usuario->getAutenticar($this->input->post('login'), $this->input->post('senha'));
 
         if (count($auth) < 1) {
-            echo 'usuário inválido!';
+            echo false;
         } else {
             $this->session->set_userdata('Usuario', $auth);
-            print_r(json_encode($this->session->all_userdata()));
+            echo true;
         }
+    }
+
+    //faz o logoff do usuário, destruindo sua sessão
+    public function logoff() {
+        $this->session->sess_destroy();
+        echo true;
     }
 
 }
