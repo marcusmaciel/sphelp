@@ -1,5 +1,3 @@
-<!--<script data-main="<?php echo LAYOUT_ASSETS; ?>js/main" src="<?php echo LAYOUT_ASSETS; ?>js/require.js"></script>-->
-
 <script src="<?php echo LAYOUT_ASSETS; ?>plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <script src="<?php echo LAYOUT_ASSETS; ?>bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo LAYOUT_ASSETS; ?>plugins/fastclick/fastclick.min.js"></script>
