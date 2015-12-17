@@ -45,24 +45,24 @@ require([
     'angularSanitize',
     'jquery',
     'uiRouter',
-    'config',
-    'values',
+    'config/config',
     'constants/constants',
+    'controllers/controllers',
+    'directives/directives',
     'filters/filters',
     'services/services',
-    'directives/directives',
-    'controllers/controllers',
+    'values/values',
 ], function (angular) {
 
     'use strict';
 
     var app = angular.module('app', [
+        'app.config',
+        'app.constants',
         'app.controllers',
+        'app.directives',
         'app.filters',
         'app.services',
-        'app.directives',
-        'app.constants',
-        'app.config',
         'app.values',
         'ui.router'
     ]);
