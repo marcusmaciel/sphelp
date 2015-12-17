@@ -9,6 +9,8 @@
             <?php if (isset($mainFooter)) echo $mainFooter; ?>
             <?php if (isset($loginPage)) echo $loginPage; ?>
         </div>
-        <?php if ($scripts) echo $scripts; ?>
+        <script data-main="http://localhost/sphelp/assets/js/main.js" 
+                src="<?php echo LAYOUT_ASSETS; ?>plugins/requirejs/require.js">
+        </script>
     </body>
 </html>
