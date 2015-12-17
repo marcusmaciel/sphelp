@@ -10,7 +10,7 @@
         <div class="box box-success">
 
             <!-- form start -->
-            <form role="form">
+            <form novalidate ng-submit="autenticar(frm)">
 
                 <div class="box-body">
 
@@ -19,7 +19,8 @@
                             <span>Login</span>
                             <i class="fa fa-sign-in text-success"></i>
                         </label>
-                        <input type="usuario" class="form-control" placeholder="admin">
+                        <input type="usuario" class="form-control" placeholder="admin"
+                               ng-model="frm.login" maxlength="50" required sp-pattern="/^\w+$/">
                     </div>
 
                     <div class="form-group">
@@ -27,7 +28,8 @@
                             <span>Senha</span>
                             <i class="fa fa-unlock text-success"></i>
                         </label>
-                        <input type="senha" class="form-control" placeholder="**********">
+                        <input type="password" class="form-control" placeholder="**********"
+                               ng-model="frm.senha" maxlength="50" required >
                     </div>
 
                 </div>
