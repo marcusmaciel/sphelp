@@ -9,7 +9,7 @@ define(function () {
             restrict: "A",
             link: function (scope, elem, attrs) {
 
-                regexp = eval(attrs.regExpRequire);
+                regexp = eval(attrs.spPattern);
 
                 var char;
 

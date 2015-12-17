@@ -7,6 +7,7 @@ define(function (require) {
 
     directives
             .directive('spHttpPrefix', require('directives/spHttpPrefixDirective'))
+            .directive('spPattern', require('directives/spPatternDirective'))
             ;
 
     return directives;
