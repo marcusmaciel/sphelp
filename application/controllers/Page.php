@@ -7,7 +7,6 @@ class Page extends CI_Controller {
     var $template = array();
     var $data = array();
     var $route = array(
-        
     );
 
     public function index() {
@@ -15,15 +14,15 @@ class Page extends CI_Controller {
         //criando cabeçalho e injetando scripts primários
         $this->template['head'] = $this->load->view('modulo/head', '', true);
         $this->template['scripts'] = $this->load->view('modulo/scripts', '', true);
-        
+
         //usuario não autenticado ou sessão expirada
         if ($this->sessao() == false) {
             $this->login();
         } else {
-            
+            $this->home();
         };
     }
-    
+
     //carrega view home
     private function home() {
         $this->template['auth'] = true;
@@ -42,16 +41,7 @@ class Page extends CI_Controller {
 
     //verifica se a sessão está ativa
     private function sessao() {
-
-        //carrega a sessão instanciada (tenta)
-        $sessao = $this->session->userdata('user_id');
-
-        //retorna a resposta
-        if ($sessao) {
-            return true;
-        } else {
-            return false;
-        };
+        return $this->session->has_userdata('Usuario');
     }
 
 }
