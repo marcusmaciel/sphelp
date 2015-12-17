@@ -6,8 +6,9 @@ define(function (require) {
         controllers = angular.module('app.controllers',[]);
     
     controllers
-        //routes
-//        .controller('appController', require('controllers/appController'))
+        //pages
+        .controller('loginFormController', require('controllers/pages/loginFormController'))
+        //components
     ;
     
     return controllers;
