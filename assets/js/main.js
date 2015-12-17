@@ -1,10 +1,9 @@
 require.config({
     paths: {
-        //exports
-        angular: '../angular/angular.min',
-        /**/angularAnimate: '../angular/angular-animate.min',
-        /**/angularSanitize: '../angular/angular-sanitize.min',
-        /**/uiRouter: '../angular/angular-ui-router.min',
+        angular: '../plugins/angular/angular.min',
+        /**/angularAnimate: '../plugins/angular/angular-animate.min',
+        /**/angularSanitize: '../plugins/angular/angular-sanitize.min',
+        /**/uiRouter: '../plugins/angular/angular-ui-router.min',
         jquery: '../plugins/jQuery/jQuery-2.1.4.min',
         /**/bootstrap: '../bootstrap/js/bootstrap.min',
         /**/fastclick: '../plugins/fastclick/fastclick.min',
@@ -30,19 +29,10 @@ require.config({
         /**/slimScroll: {deps: ['jquery']},
         /**/chartjs: {deps: ['jquery']}
     },
-    priority: [
-        'angular',
-        'jquery',
-        'jvectormap'
-    ],
-    deps: [
-        'bootstrap'
-    ]
+    priority: ['angular', 'jquery']
 });
-
 require([
     'angular',
-    'angularSanitize',
     'jquery',
     'uiRouter',
     'config/config',
@@ -51,10 +41,8 @@ require([
     'directives/directives',
     'filters/filters',
     'services/services',
-    'values/values',
-], function (angular) {
-
-    'use strict';
+    'values/values'
+], function (angular, uiRouter, $) {
 
     var app = angular.module('app', [
         'app.config',
