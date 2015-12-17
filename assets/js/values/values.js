@@ -3,12 +3,13 @@ define(function (require) {
     'use strict';
 
     var angular = require('angular'),
-        values = angular.module('app.values',[]);
-    
+            folder = 'values/',
+            values = angular.module('app.values', []);
+
     values
-        //routes
+            //routes
 //        .value('value', require('values/value'))
-    ;
-    
+            ;
+
     return values;
 });
