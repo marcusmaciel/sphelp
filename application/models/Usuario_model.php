@@ -32,9 +32,9 @@ class Usuario_model extends CI_Model {
 
     //autentica os usuários
     public function getAutenticar($login, $senha) {
-        
+
         //buscando usuários que estão ativos e que as informações listadas batem
-        $query = $this->db->get_where($this->table, array('_s' => 'ativo', 'login' => $login, 'senha' => $senha,));
+        $query = $this->db->get_where($this->table, array('_s' => 'ativo', 'login' => $login, 'senha' => $senha));
 
         return $query->result();
     }
