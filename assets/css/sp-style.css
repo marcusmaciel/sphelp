@@ -49,3 +49,7 @@
     align-items:center;
 }
 /*modulo/loginPage*/
+
+/*ui.bootstrap bugfix'es*/
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+/*ui.bootstrap bugfix'es*/

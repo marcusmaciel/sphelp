@@ -7,17 +7,16 @@ define(function () {
             $http
             ) {
 
-        $scope.autenticar = function (frm) {
-
-            $http({
-                method: 'GET',
-                url: '/someUrl'
-            }).then(function () { //success
-
-            }, function () { //error
-
-            });
-
+        $scope.autenticar = function (form) {
+            console.log(form);
+/*
+            $http.post('usuario/autenticar', frm)
+                .then(function (d) { //success
+                    console.log(d);
+                }, function (d) { //error
+                    console.log(d);
+                });
+*/
         };
 
     }

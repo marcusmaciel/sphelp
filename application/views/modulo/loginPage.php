@@ -10,7 +10,7 @@
         <div class="box box-success">
 
             <!-- form start -->
-            <form novalidate ng-submit="autenticar(frm)">
+            <form name="loginForm" novalidate ng-submit="submitted && loginForm.$valid && autenticar(form)">
 
                 <div class="box-body">
 
@@ -19,8 +19,13 @@
                             <span>Login</span>
                             <i class="fa fa-sign-in text-success"></i>
                         </label>
-                        <input type="usuario" class="form-control" placeholder="admin"
-                               ng-model="frm.login" maxlength="50" required sp-pattern="/^\w+$/">
+                        <input name="login" type="text" ng-model="form.login" 
+                               class="form-control" placeholder="admin"
+                               maxlength="50" required sp-pattern="/^\w+$/"
+                               uib-tooltip="Enter something in this input field to disable this tooltip"
+                               tooltip-placement="top"
+                               tooltip-trigger="mouseover"
+                               tooltip-enable="loginForm.login.$error" />
                     </div>
 
                     <div class="form-group">
@@ -29,14 +34,15 @@
                             <i class="fa fa-unlock text-success"></i>
                         </label>
                         <input type="password" class="form-control" placeholder="**********"
-                               ng-model="frm.senha" maxlength="50" required >
+                               ng-model="form.senha" maxlength="50" required
+                               data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
                     </div>
 
                 </div>
                 <!-- /.box-body -->
 
                 <div class="box-footer text-right">
-                    <button type="submit" class="btn btn-success">Entrar</button>
+                    <button type="submit" ng-click="submitted = true" class="btn btn-success">Entrar</button>
                 </div>
 
             </form>
