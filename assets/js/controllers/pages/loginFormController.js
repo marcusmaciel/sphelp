@@ -2,11 +2,24 @@ define(function () {
 
     'use strict';
 
-    function ctrl() {
-        console.log('ta funfano saporra karaio');
+    function ctrl(
+            $scope,
+            $http
+            ) {
+
+
+        $scope.autenticar = function (frm) {
+            
+            
+            
+        };
+
     }
 
-    ctrl.$inject = [];
+    ctrl.$inject = [
+        '$scope',
+        '$http'
+    ];
 
     return ctrl;
 
