@@ -27,8 +27,7 @@
         position: relative;
     }
     .sp-login-box .logo img{
-        max-height: 100%;
-        max-width: 100%;
+        height: 100%;
     }
     .sp-login-box .form-group label{
         display: flex;
