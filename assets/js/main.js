@@ -29,12 +29,25 @@ require.config({
         /**/slimScroll: {deps: ['jquery']},
         /**/chartjs: {deps: ['jquery']}
     },
-    priority: ['angular', 'jquery']
+    priority: [
+        'angular', 
+        'jquery'
+    ]
 });
 require([
     'angular',
+    /**/'angularAnimate',
+    /**/'angularSanitize',
+    /**/'uiRouter',
     'jquery',
-    'uiRouter',
+    /**/'bootstrap',
+    /**/'fastclick',
+    /**/'adminLTE',
+    /**/'sparkline',
+    /**/'jvectormap',
+    /**/'jvectormap_worldMap',
+    /**/'slimScroll',
+    /**/'chartjs',
     'config/config',
     'constants/constants',
     'controllers/controllers',
