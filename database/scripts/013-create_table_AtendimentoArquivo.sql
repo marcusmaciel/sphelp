@@ -15,4 +15,4 @@ CREATE TABLE IF NOT EXISTS `sphelp`.`AtendimentoArquivo` (
     REFERENCES `sphelp`.`Atendimento` (`_i`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE)
-ENGINE = InnoDB
+ENGINE = InnoDB;

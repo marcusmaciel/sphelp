@@ -7,4 +7,5 @@ CREATE TABLE IF NOT EXISTS `sphelp`.`UsuarioSessao` (
     `data` blob NOT NULL,
     PRIMARY KEY (id),
     KEY `ci_sessions_timestamp` (`timestamp`)
-);
+)ENGINE = InnoDB;
+
