@@ -4,7 +4,7 @@ require.config({
         /**/angularAnimate: '../plugins/angular/angular-animate.min',
         /**/angularSanitize: '../plugins/angular/angular-sanitize.min',
         /**/uiRouter: '../plugins/angular/angular-ui-router.min',
-        /**/uiBootstrap: '../plugins/angular/angular-ui-bootstrap.min',
+        /**/uiBootstrap: '../plugins/angular/angular-ui-bootstrap',
         jquery: '../plugins/jQuery/jQuery-2.1.4.min',
         /**/bootstrap: '../bootstrap/js/bootstrap.min',
         /**/fastclick: '../plugins/fastclick/fastclick.min',

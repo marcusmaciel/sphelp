@@ -625,7 +625,7 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
             return {
                 replace: true,
                 scope: {content: '@', placement: '@', popupClass: '@', animation: '&', isOpen: '&'},
-                templateUrl: 'template/tooltip/tooltip-popup.html',
+                templateUrl: 'assets/plugins/angular/ui-bootstrap-template/tooltip/tooltip-popup.html',
                 link: function (scope, element) {
                     element.addClass('tooltip');
                 }
@@ -641,7 +641,7 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
                 replace: true,
                 scope: {contentExp: '&', placement: '@', popupClass: '@', animation: '&', isOpen: '&',
                     originScope: '&'},
-                templateUrl: 'template/tooltip/tooltip-template-popup.html',
+                templateUrl: 'assets/plugins/angular/ui-bootstrap-template/tooltip/tooltip-template-popup.html',
                 link: function (scope, element) {
                     element.addClass('tooltip');
                 }
@@ -658,7 +658,7 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
             return {
                 replace: true,
                 scope: {contentExp: '&', placement: '@', popupClass: '@', animation: '&', isOpen: '&'},
-                templateUrl: 'template/tooltip/tooltip-html-popup.html',
+                templateUrl: 'assets/plugins/angular/ui-bootstrap-template/tooltip/tooltip-html-popup.html',
                 link: function (scope, element) {
                     element.addClass('tooltip');
                 }
@@ -788,7 +788,7 @@ angular.module('ui.bootstrap.tooltip')
                 return {
                     replace: true,
                     scope: {content: '@', placement: '@', popupClass: '@', animation: '&', isOpen: '&'},
-                    templateUrl: 'template/tooltip/tooltip-popup.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/tooltip/tooltip-popup.html',
                     link: function (scope, element) {
                         if (!$tooltipSuppressWarning) {
                             $log.warn('tooltip-popup is now deprecated. Use uib-tooltip-popup instead.');
@@ -808,7 +808,7 @@ angular.module('ui.bootstrap.tooltip')
                     replace: true,
                     scope: {contentExp: '&', placement: '@', popupClass: '@', animation: '&', isOpen: '&',
                         originScope: '&'},
-                    templateUrl: 'template/tooltip/tooltip-template-popup.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/tooltip/tooltip-template-popup.html',
                     link: function (scope, element) {
                         if (!$tooltipSuppressWarning) {
                             $log.warn('tooltip-template-popup is now deprecated. Use uib-tooltip-template-popup instead.');
@@ -829,7 +829,7 @@ angular.module('ui.bootstrap.tooltip')
                 return {
                     replace: true,
                     scope: {contentExp: '&', placement: '@', popupClass: '@', animation: '&', isOpen: '&'},
-                    templateUrl: 'template/tooltip/tooltip-html-popup.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/tooltip/tooltip-html-popup.html',
                     link: function (scope, element) {
                         if (!$tooltipSuppressWarning) {
                             $log.warn('tooltip-html-popup is now deprecated. Use uib-tooltip-html-popup instead.');
@@ -1180,7 +1180,7 @@ angular.module('ui.bootstrap.popover')
                 return {
                     replace: true,
                     scope: {contentExp: '&', title: '@', placement: '@', popupClass: '@', animation: '&', isOpen: '&'},
-                    templateUrl: 'template/popover/popover-html.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/popover/popover-html.html',
                     link: function (scope, element) {
                         if (!$popoverSuppressWarning) {
                             $log.warn('popover-html-popup is now deprecated. Use uib-popover-html-popup instead.');
@@ -1201,7 +1201,7 @@ angular.module('ui.bootstrap.popover')
                 return {
                     replace: true,
                     scope: {title: '@', content: '@', placement: '@', popupClass: '@', animation: '&', isOpen: '&'},
-                    templateUrl: 'template/popover/popover.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/popover/popover.html',
                     link: function (scope, element) {
                         if (!$popoverSuppressWarning) {
                             $log.warn('popover-popup is now deprecated. Use uib-popover-popup instead.');
@@ -1286,7 +1286,7 @@ angular.module('ui.bootstrap.progressbar', [])
                 scope: {
                     max: '=?'
                 },
-                templateUrl: 'template/progressbar/progress.html'
+                templateUrl: 'assets/plugins/angular/ui-bootstrap-template/progressbar/progress.html'
             };
         })
 
@@ -1299,7 +1299,7 @@ angular.module('ui.bootstrap.progressbar', [])
                     value: '=',
                     type: '@'
                 },
-                templateUrl: 'template/progressbar/bar.html',
+                templateUrl: 'assets/plugins/angular/ui-bootstrap-template/progressbar/bar.html',
                 link: function (scope, element, attrs, progressCtrl) {
                     progressCtrl.addBar(scope, element, attrs);
                 }
@@ -1316,7 +1316,7 @@ angular.module('ui.bootstrap.progressbar', [])
                     max: '=?',
                     type: '@'
                 },
-                templateUrl: 'template/progressbar/progressbar.html',
+                templateUrl: 'assets/plugins/angular/ui-bootstrap-template/progressbar/progressbar.html',
                 link: function (scope, element, attrs, progressCtrl) {
                     progressCtrl.addBar(scope, angular.element(element.children()[0]), {title: attrs.title});
                 }
@@ -1394,7 +1394,7 @@ angular.module('ui.bootstrap.progressbar')
                         max: '=?',
                         title: '@?'
                     },
-                    templateUrl: 'template/progressbar/progress.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/progressbar/progress.html',
                     link: function () {
                         if (!$progressSuppressWarning) {
                             $log.warn('progress is now deprecated. Use uib-progress instead.');
@@ -1412,7 +1412,7 @@ angular.module('ui.bootstrap.progressbar')
                         value: '=',
                         type: '@'
                     },
-                    templateUrl: 'template/progressbar/bar.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/progressbar/bar.html',
                     link: function (scope, element, attrs, progressCtrl) {
                         if (!$progressSuppressWarning) {
                             $log.warn('bar is now deprecated. Use uib-bar instead.');
@@ -1432,7 +1432,7 @@ angular.module('ui.bootstrap.progressbar')
                         max: '=?',
                         type: '@'
                     },
-                    templateUrl: 'template/progressbar/progressbar.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/progressbar/progressbar.html',
                     link: function (scope, element, attrs, progressCtrl) {
                         if (!$progressSuppressWarning) {
                             $log.warn('progressbar is now deprecated. Use uib-progressbar instead.');
@@ -1512,7 +1512,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.stackedMap'])
 
                 return {
                     replace: true,
-                    templateUrl: 'template/modal/backdrop.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/modal/backdrop.html',
                     compile: function (tElement, tAttrs) {
                         tElement.addClass(tAttrs.backdropClass);
                         return linkFn;
@@ -1562,7 +1562,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.stackedMap'])
                     replace: true,
                     transclude: true,
                     templateUrl: function (tElement, tAttrs) {
-                        return tAttrs.templateUrl || 'template/modal/window.html';
+                        return tAttrs.templateUrl || 'assets/plugins/angular/ui-bootstrap-template/modal/window.html';
                     },
                     link: function (scope, element, attrs) {
                         element.addClass(attrs.windowClass || '');
@@ -2169,7 +2169,7 @@ angular.module('ui.bootstrap.modal')
 
                 return {
                     replace: true,
-                    templateUrl: 'template/modal/backdrop.html',
+                    templateUrl: 'assets/plugins/angular/ui-bootstrap-template/modal/backdrop.html',
                     compile: function (tElement, tAttrs) {
                         tElement.addClass(tAttrs.backdropClass);
                         return linkFn;
@@ -2221,7 +2221,7 @@ angular.module('ui.bootstrap.modal')
                     replace: true,
                     transclude: true,
                     templateUrl: function (tElement, tAttrs) {
-                        return tAttrs.templateUrl || 'template/modal/window.html';
+                        return tAttrs.templateUrl || 'assets/plugins/angular/ui-bootstrap-template/modal/window.html';
                     },
                     link: function (scope, element, attrs) {
                         if (!$modalSuppressWarning) {

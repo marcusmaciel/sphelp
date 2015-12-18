@@ -22,8 +22,7 @@
                         <input name="login" type="text" ng-model="form.login" 
                                class="form-control" placeholder="admin"
                                maxlength="50" required sp-pattern="/^\w+$/"
-                               uib-popover="campo obrigatório"
-                               popover-trigger="mouseenter"/>
+                               uib-tooltip="campo obrigatório"/>
                     </div>
 
                     <div class="form-group">
@@ -33,7 +32,7 @@
                         </label>
                         <input type="password" class="form-control" placeholder="**********"
                                ng-model="form.senha" maxlength="50" required
-                               >
+                               uib-tooltip="campo obrigatório">
                     </div>
 
                 </div>
@@ -55,10 +54,15 @@
 
     <div class="sp-login-footer">
 
-        <div class="copyright">
+        <div class="copyright hidden-xs">
             &copy; SystemPort Technology Ltda - todos os direitos reservados.
         </div><!--copyright-->
 
+        <div class="copyright visible-xs">
+            SystemPort Technology Ltda
+        </div><!--copyright-->
+
+        
         <div class="versao">
             Versão <b>alpha</b>
         </div><!--versao->
