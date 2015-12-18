@@ -26,10 +26,8 @@ class Page extends CI_Controller {
     //carrega view home
     private function home() {
 
-        $Usuario = $this->session->userdata('Usuario')[0];
         $data = [
-            'login' => $Usuario->login,
-            'horarioLogado' => $Usuario->_d
+            'Usuario' => $this->session->userdata('Usuario')[0],
         ];
         $this->template['auth'] = true;
         $this->template['mainHeader'] = $this->load->view('modulo/mainHeader', $data, true);
