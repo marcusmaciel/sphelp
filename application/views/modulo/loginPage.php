@@ -55,11 +55,11 @@
     <div class="sp-login-footer">
 
         <div class="copyright hidden-xs">
-            &copy; SystemPort Technology Ltda - todos os direitos reservados.
+            Copyright &copy 2000-2015 System Port Technology. Todos os direitos reservados.
         </div><!--copyright-->
 
         <div class="copyright visible-xs">
-            SystemPort Technology Ltda
+            SystemPort Technology.
         </div><!--copyright-->
 
         
