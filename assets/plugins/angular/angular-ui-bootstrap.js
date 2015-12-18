@@ -88,7 +88,7 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
                         }
                     });
 
-                    return function $tooltip(ttType, prefix, defaultTriggerShow, options) {
+                    return function $uibTooltip(ttType, prefix, defaultTriggerShow, options) {
                         options = angular.extend({}, defaultOptions, globalOptions, options);
 
                         /**
@@ -681,10 +681,11 @@ angular.module('ui.bootstrap.tooltip')
                 angular.extend(this, $uibTooltipProvider);
 
                 this.$get = ['$log', '$tooltipSuppressWarning', '$injector', function ($log, $tooltipSuppressWarning, $injector) {
+/*
                         if (!$tooltipSuppressWarning) {
                             $log.warn('$tooltip is now deprecated. Use $uibTooltip instead.');
                         }
-
+*/
                         return $injector.invoke($uibTooltipProvider.$get);
                     }];
             }])
@@ -799,8 +800,8 @@ angular.module('ui.bootstrap.tooltip')
                 };
             }])
 
-        .directive('tooltip', ['$tooltip', function ($tooltip) {
-                return $tooltip('tooltip', 'tooltip', 'mouseenter');
+        .directive('tooltip', ['$tooltip', function ($uibTooltip) {
+                return $uibTooltip('tooltip', 'tooltip', 'mouseenter');
             }])
 
         .directive('tooltipTemplatePopup', ['$log', '$tooltipSuppressWarning', function ($log, $tooltipSuppressWarning) {
@@ -819,8 +820,8 @@ angular.module('ui.bootstrap.tooltip')
                 };
             }])
 
-        .directive('tooltipTemplate', ['$tooltip', function ($tooltip) {
-                return $tooltip('tooltipTemplate', 'tooltip', 'mouseenter', {
+        .directive('tooltipTemplate', ['$tooltip', function ($uibTooltip) {
+                return $uibTooltip('tooltipTemplate', 'tooltip', 'mouseenter', {
                     useContentExp: true
                 });
             }])
@@ -840,8 +841,8 @@ angular.module('ui.bootstrap.tooltip')
                 };
             }])
 
-        .directive('tooltipHtml', ['$tooltip', function ($tooltip) {
-                return $tooltip('tooltipHtml', 'tooltip', 'mouseenter', {
+        .directive('tooltipHtml', ['$tooltip', function ($uibTooltip) {
+                return $uibTooltip('tooltipHtml', 'tooltip', 'mouseenter', {
                     useContentExp: true
                 });
             }]);
@@ -1170,8 +1171,8 @@ angular.module('ui.bootstrap.popover')
                 };
             }])
 
-        .directive('popoverTemplate', ['$tooltip', function ($tooltip) {
-                return $tooltip('popoverTemplate', 'popover', 'click', {
+        .directive('popoverTemplate', ['$tooltip', function ($uibTooltip) {
+                return $uibTooltip('popoverTemplate', 'popover', 'click', {
                     useContentExp: true
                 });
             }])
@@ -1191,8 +1192,8 @@ angular.module('ui.bootstrap.popover')
                 };
             }])
 
-        .directive('popoverHtml', ['$tooltip', function ($tooltip) {
-                return $tooltip('popoverHtml', 'popover', 'click', {
+        .directive('popoverHtml', ['$tooltip', function ($uibTooltip) {
+                return $uibTooltip('popoverHtml', 'popover', 'click', {
                     useContentExp: true
                 });
             }])
@@ -1212,9 +1213,9 @@ angular.module('ui.bootstrap.popover')
                 };
             }])
 
-        .directive('popover', ['$tooltip', function ($tooltip) {
+        .directive('popover', ['$tooltip', function ($uibTooltip) {
 
-                return $tooltip('popover', 'popover', 'click');
+                return $uibTooltip('popover', 'popover', 'click');
             }]);
 
 angular.module('ui.bootstrap.progressbar', [])
