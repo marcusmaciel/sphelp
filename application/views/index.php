@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
     <?php if ($head) echo $head; ?>
     <body class="hold-transition skin-green sidebar-mini">
         <div class="wrapper">
