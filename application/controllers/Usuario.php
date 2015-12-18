@@ -15,7 +15,7 @@ class Usuario extends CI_Controller {
         if (count($auth) < 1) {
             echo 'false';
         } else {
-//            $this->session->set_userdata('Usuario', $auth);
+            $this->session->set_userdata('Usuario', $auth);
             echo 'true';
         }
     }
