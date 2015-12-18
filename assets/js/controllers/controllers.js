@@ -8,7 +8,7 @@ define(function (require) {
     controllers
             //pages
             .controller('loginFormController', require('controllers/pages/loginFormController'))
-            .controller('headerUsuarioController', require('controllers/pages/headerUsuarioController'))
+            .controller('headerUsuarioController', require('controllers/layout/headerUsuarioController'))
             //components
             ;
 
