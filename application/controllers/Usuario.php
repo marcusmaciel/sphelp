@@ -3,7 +3,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Controller {
-
     //ver se o login, senha estão certos e se esse usuário está ativo
     public function autenticar() {
 
@@ -19,6 +18,12 @@ class Usuario extends CI_Controller {
         } else {
             echo false;
         }
+    }
+    
+    public function listarUsuarios(){
+        $this->load->model('usuario_model', 'Usuario');
+        $usuarios = $this->Usuario->getById();
+        echo $usuarios;
     }
 
     //faz o logoff do usuário, destruindo sua sessão

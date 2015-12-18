@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Page extends CI_Controller {
+class Usuarios extends CI_Controller {
 
     var $template = array();
     var $data = array();
@@ -19,12 +19,12 @@ class Page extends CI_Controller {
         if ($this->sessao() == false) {
             $this->login();
         } else {
-            $this->home();
+            $this->gerenciadorUsuarios();
         };
     }
 
     //carrega view home
-    private function home() {
+    private function gerenciadorUsuarios() {
 
         $Usuario = $this->session->userdata('Usuario')[0];
         $data = [
@@ -34,9 +34,9 @@ class Page extends CI_Controller {
         $this->template['auth'] = true;
         $this->template['mainHeader'] = $this->load->view('modulo/mainHeader', $data, true);
         $this->template['mainSidebar'] = $this->load->view('modulo/mainSidebar', '', true);
-        $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', '', true);
+        $this->template['gerenciadorUsuarios'] = $this->load->view('modulo/gerenciadorUsuarios', '', true);
         $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', '', true);
-        $this->load->view('index', $this->template);
+        $this->load->view('usuarios', $this->template);
     }
     
     //carrega view login

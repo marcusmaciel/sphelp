@@ -50,5 +50,4 @@ class Usuario_model extends CI_Model {
     public function delete($_i) {
         
     }
-
 }
