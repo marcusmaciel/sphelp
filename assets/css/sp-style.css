@@ -60,6 +60,28 @@
 .logo-mini img{
     width: 70%;
 }
+.info-box{
+    margin-bottom: 0;
+}
+.product-list-in-box>.item{
+    padding: 0;
+}
+.item-chamado{
+    padding: 10px 5px;
+    display: block;
+}
+.item-chamado:hover{
+    background: #f2f2f2;
+}
+.item-chamado label{
+    color: #008749;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+.item-chamado span{
+    color: #777;
+}
 /*ui.bootstrap bugfix'es*/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 /*ui.bootstrap bugfix'es*/
