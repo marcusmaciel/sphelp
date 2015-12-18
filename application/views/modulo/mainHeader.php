@@ -99,7 +99,7 @@
                 <li class="dropdown user user-menu"  ng-controller="headerUsuarioController">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs"><?php echo $Usuario->login; ?></span>
+                        <span class="hidden-xs"><?php echo $login; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -108,7 +108,7 @@
                             <p>
                                 Suporte Técnico
                                 <small>
-                                    <?php echo 'Logado as ' . date('H:i:s \d\e d/m/Y', strtotime($Usuario->_d)); ?>
+                                    <?php echo 'Logado as ' . date('H:i:s \d\e d/m/Y', strtotime($_d)); ?>
                                 </small>
                             </p>
                         </li>
