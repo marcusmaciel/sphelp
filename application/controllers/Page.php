@@ -25,12 +25,10 @@ class Page extends CI_Controller {
 
     //carrega view home
     private function home() {
-
-        $data = [
-            'Usuario' => $this->session->userdata('Usuario')[0],
-        ];
-        $this->template['auth'] = true;
-        $this->template['mainHeader'] = $this->load->view('modulo/mainHeader', $data, true);
+        
+        $Usuario = $this->session->userdata('Usuario')[0];
+        
+        $this->template['mainHeader'] = $this->load->view('modulo/mainHeader', $Usuario, true);
         $this->template['mainSidebar'] = $this->load->view('modulo/mainSidebar', '', true);
         $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', '', true);
         $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', '', true);
