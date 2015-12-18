@@ -20,9 +20,7 @@
                         </label>
                         <input name="login" type="text" ng-model="form.login" 
                                class="form-control" placeholder="admin"
-                               maxlength="50" required sp-pattern="/^\w+$/"
-                               uib-tooltip="campo obrigatório"
-                               uib-triiger="focus"/>
+                               maxlength="50" required sp-pattern="/^\w+$/"/>
                     </div>
 
                     <div class="form-group">
@@ -31,9 +29,7 @@
                             <i class="fa fa-unlock text-success"></i>
                         </label>
                         <input type="password" class="form-control" placeholder="**********"
-                               ng-model="form.senha" maxlength="50" required
-                               uib-tooltip="campo obrigatório"
-                               uib-triiger="focus">
+                               ng-model="form.senha" maxlength="50" required/>
                     </div>
 
                 </div><!-- /.box-body -->
