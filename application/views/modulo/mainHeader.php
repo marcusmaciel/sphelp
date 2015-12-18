@@ -122,9 +122,6 @@
                             <div class="pull-left">
                                 <a href="#" class="btn btn-default"><i class="fa fa-user"></i> Meu perfil</a>
                             </div>
-                            <div class="pull-right">
-                                <a href="#" class="btn btn-danger"><i class="fa fa-power-off"></i> Sair</a>
-                            </div>
                         </li>
                     </ul>
                 </li>
