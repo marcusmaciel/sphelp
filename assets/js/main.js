@@ -20,7 +20,7 @@ require.config({
         /**/angularAnimate: {deps: ['angular']},
         /**/angularSanitize: {deps: ['angular']},
         /**/uiRouter: {deps: ['angular']},
-        /**/uiBootstrap: {deps: ['angular','jquery']},
+        /**/uiBootstrap: {deps: ['angular', 'jquery']},
         jquery: {exports: 'jquery'},
         /**/bootstrap: {deps: ['jquery']},
         /**/fastclick: {deps: ['jquery']},
@@ -32,7 +32,7 @@ require.config({
         /**/chartjs: {deps: ['jquery']}
     },
     priority: [
-        'angular', 
+        'angular',
         'jquery'
     ]
 });
@@ -71,6 +71,8 @@ require([
         'ui.router',
         'ui.bootstrap'
     ]);
+
+    angular.bootstrap(document, ['app']);
 
     return app;
 
