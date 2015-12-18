@@ -3,6 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Controller {
+
     //ver se o login, senha estão certos e se esse usuário está ativo
     public function autenticar() {
 
@@ -19,8 +20,8 @@ class Usuario extends CI_Controller {
             echo false;
         }
     }
-    
-    public function listarUsuarios(){
+
+    public function listarUsuarios() {
         $this->load->model('usuario_model', 'Usuario');
         $usuarios = $this->Usuario->getById();
         echo $usuarios;
@@ -37,7 +38,7 @@ class Usuario extends CI_Controller {
 
         $chave = $this->input->post('chave');
         $valor = $this->input->post('valor');
-        
+
         //carrega o módulo de usuário para tentar autenticar o mesmo
         $this->load->model('usuario_model', 'Usuario');
 
@@ -64,7 +65,7 @@ class Usuario extends CI_Controller {
                 $result = $this->Usuario->getBy_i($valor);
                 break;
         };
-        
+
         //converte o resultado e retorna em JSON
         echo json_encode($result);
         
