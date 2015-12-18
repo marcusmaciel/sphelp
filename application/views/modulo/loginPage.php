@@ -33,7 +33,7 @@
                         </label>
                         <input type="password" class="form-control" placeholder="**********"
                                ng-model="form.senha" maxlength="50" required
-                               data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
+                               >
                     </div>
 
                 </div>
