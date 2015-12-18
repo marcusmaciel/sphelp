@@ -6,11 +6,10 @@ define(['angular'], function (angular) {
             .config(['$httpProvider', function ($httpProvider) {
                     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
                     $httpProvider.defaults.transformRequest = function (data) {
-                        if (data === undefined) {
-                            return data;
-                        }
+                        var data = data || {};
+                        data[window.sphelp[0]] = window.sphelp[1];
                         return $.param(data);
-                    }
+                    };
                 }])
             ;
 });

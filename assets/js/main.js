@@ -57,7 +57,7 @@ require([
     'directives/directives',
     'filters/filters',
     'services/services',
-    'values/values'
+    'values'
 ], function (angular, uiRouter, $) {
 
     var app = angular.module('app', [
