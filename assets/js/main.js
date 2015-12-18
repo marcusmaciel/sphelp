@@ -51,7 +51,7 @@ require([
     /**/'jvectormap_worldMap',
     /**/'slimScroll',
     /**/'chartjs',
-    'config/config',
+    'config',
     'constants/constants',
     'controllers/controllers',
     'directives/directives',

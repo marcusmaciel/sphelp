@@ -6,17 +6,18 @@ class Usuario extends CI_Controller {
 
     //ver se o login, senha estão certos e se esse usuário está ativo
     public function autenticar() {
+
         //carrega o módulo de usuário para tentar autenticar o mesmo
         $this->load->model('usuario_model', 'Usuario');
 
         //verifica se algum usuário ativo é encontrado
         $auth = $this->Usuario->getAutenticar($this->input->post('login'), $this->input->post('senha'));
 
-        if (count($auth) < 1) {
-            echo 'false';
-        } else {
+        if (count($auth) > 0) {
             $this->session->set_userdata('Usuario', $auth);
-            echo 'true';
+            echo true;
+        } else {
+            echo false;
         }
     }
 

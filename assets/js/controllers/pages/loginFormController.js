@@ -11,37 +11,40 @@ define(function () {
         $scope.callbackMessage = null;
         $scope.autenticar = function (form) {
 
-            $http.post('usuario/autenticar', form)
-                    .then(function (response) { //success
+            $http({
+                method: 'POST',
+                url: 'usuario/autenticar',
+                data: form,
+            }).then(function (response) { //success
 
-                        if (response == true) { //autenticou
+                if (response.data == true) { //autenticou
 
-                            location.reload();
-                        } else { //não passou
+                    location.reload();
 
-                            $scope.callbackMessage = {
-                                text: 'usuário ou senha incorreta.',
-                                class: 'alert-info'
-                            };
+                } else { //não passou
 
-                            $timeout(function () {
-                                $scope.callbackMessage;
-                            }, 3000);
+                    $scope.callbackMessage = {
+                        text: 'usuário ou senha incorreta.',
+                        class: 'alert-info'
+                    };
 
-                        }
-                        console.log($scope.callbackMessage);
-                    }, function () { //ocorreu algum erro no servidor
+                    $timeout(function () {
+                        $scope.callbackMessage;
+                    }, 3000);
+                }
 
-                        $scope.callbackMessage = {
-                            text: 'Oops... ocorreu um erro no servidor. tente novamente mais tarde',
-                            class: 'alert-warning'
-                        };
+            }, function () { //ocorreu algum erro no servidor
 
-                        $timeout(function () {
-                            $scope.callbackMessage;
-                        }, 3000);
+                $scope.callbackMessage = {
+                    text: 'Oops... ocorreu um erro no servidor. tente novamente mais tarde',
+                    class: 'alert-warning'
+                };
 
-                    });
+                $timeout(function () {
+                    $scope.callbackMessage;
+                }, 3000);
+
+            });
         };
     }
 
