@@ -2,6 +2,9 @@
 
 class TipoContato_model extends CI_Model {
 
+    //tabela
+    var $table = 'TipoContato';
+    //colunas
     var $_i = null;
     var $descricao = '';
 
@@ -9,20 +12,8 @@ class TipoContato_model extends CI_Model {
         parent::__construct();
     }
 
-    public function getById($_i = null) {
-        
-    }
-
-    public function post($data) {
-        
-    }
-
-    public function put($data) {
-        
-    }
-
-    public function delete($_i) {
-        
+    public function get() {
+        return $this->db->get($this->table)->return();
     }
 
 }
