@@ -53,12 +53,11 @@
     text-align: center;
 }
 /*modulo/loginPage*/
+
 /*modulo/Home*/
-.logo-lg img{
-    width: 50%;
-}
+.logo-lg img,
 .logo-mini img{
-    width: 70%;
+    max-height: 35px;
 }
 .info-box{
     margin-bottom: 0;
