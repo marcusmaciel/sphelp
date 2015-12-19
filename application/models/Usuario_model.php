@@ -10,6 +10,8 @@ class Usuario_model extends CI_Model {
     var $_d = '';
     var $login = '';
     var $senha = '';
+    //colunas não alteráveis
+    var $column_blocks = array('_i', '_d');
 
     function __construct() {
         parent::__construct();
@@ -58,8 +60,9 @@ class Usuario_model extends CI_Model {
         $this->db->where($data->_i);
         //exlui elementos que não devem atualizar
         $values = $data;
-        unset($values[array_search('_i', $values)]);
-        unset($values[array_search('_d', $values)]);
+        foreach ($column_blocks as $column) {
+            unset($values[array_search($column_blocks[$column], $values)]);
+        };
         //check para atualizar e retorna status
         if ($this->db->update($this->table, $values)) {
             return true;
