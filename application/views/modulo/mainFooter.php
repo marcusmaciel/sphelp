@@ -1,7 +1,10 @@
-<!--modulo/mainFooter-->
+<!--modulo/mainFooter (desktop & tablet)-->
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
+    <div class="pull-right">
         <b>Version</b> Alpha
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="http://systemcommerce.net">System Port Technology</a>.</strong> Todos os direitos reservados.
+    <strong>
+        <span class="hidden-xs">Copyright &copy; 2000-2015 </span>
+        <a href="http://systemcommerce.net">System Port Technology</a>
+    </strong><span class="hidden-xs"> - Todos os direitos reservados.</span>
 </footer>
