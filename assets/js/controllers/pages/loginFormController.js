@@ -14,7 +14,7 @@ define(function () {
             $http({
                 method: 'POST',
                 url: 'usuario/autenticar',
-                data: form,
+                data: form
             }).then(function (response) { //success
 
                 if (response.data == true) { //autenticou
