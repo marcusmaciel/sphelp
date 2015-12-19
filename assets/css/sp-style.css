@@ -84,3 +84,9 @@
 /*ui.bootstrap bugfix'es*/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 /*ui.bootstrap bugfix'es*/
+
+/*template bugfix'es*/
+.content-wrapper{
+    min-height:calc(100vh - 101px)
+}
+/*template bugfix'es*/
