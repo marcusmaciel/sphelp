@@ -26,8 +26,20 @@
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
+
+                <!-- atalho:novo chamado -->
+                <li>
+                    <a href="" ng-click="" tooltip-placement="bottom"
+                       data-toggle="tooltip" uib-tooltip="novo chamado">
+                        <i class="fa fa-plus-circle"></i>
+                    </a>
+                </li>
+
+                <!-- meus chamados -->
                 <li class="dropdown tasks-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       tooltip-placement="bottom"
+                       data-toggle="tooltip" uib-tooltip="meus chamados em aberto">
                         <i class="fa fa-bell-o"></i>
                         <span class="label label-warning">9</span>
                     </a>
@@ -95,33 +107,29 @@
                         </li>
                     </ul>
                 </li>
-                <!-- User Account: style can be found in dropdown.less -->
+
+                <!-- informacoes do usuario -->
                 <li class="dropdown user user-menu"  ng-controller="headerUsuarioController">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       tooltip-placement="bottom"
+                       data-toggle="tooltip" uib-tooltip="informações do usuário">
+                        <i class="fa fa-user"></i>
                         <span class="hidden-xs"><?php echo $login; ?></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <!-- User image -->
-                        <li class="user-header">
-                            <img src="assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                            <p>
-                                Suporte Técnico
-                                <small>
-                                    <?php echo 'Logado as ' . date('H:i:s \d\e d/m/Y', strtotime($_d)); ?>
-                                </small>
-                            </p>
-                        </li>
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="#" class="btn btn-default"><i class="fa fa-user"></i> Meu perfil</a>
-                            </div>
-                        </li>
+                        <!-- perfil do usuario -->
+                        <li><i class="fa fa-info"></i> Perfil</li>
+                        <!-- estatísticas-->
+                        <li><i class="fa fa-line-chart"></i> Estatísticas</li>
                     </ul>
                 </li>
-                <!-- Control Sidebar Toggle Button -->
+                
+                <!-- logoff -->
                 <li ng-controller="headerUsuarioController">
-                    <a href="" data-toggle="control-sidebar"  ng-click="loggout()"><i class="fa fa-power-off"></i></a>
+                    <a href="" ng-click="loggout()" tooltip-placement="bottom"
+                       data-toggle="tooltip" uib-tooltip="sair">
+                        <i class="fa fa-power-off"></i>
+                    </a>
                 </li>
             </ul>
         </div>
