@@ -19,24 +19,24 @@
     display: block;
     padding: 15px;
 }
-    .sp-login-box .logo{
-        width: 100%;
-        height: 100px;
-        padding: 15px;
-        text-align: center;
-        position: relative;
-    }
-    .sp-login-box .logo img{
-        height: 100%;
-    }
-    .sp-login-box .form-group label{
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-    }
-    .sp-login-box .callback {
-        display: none;
-    }
+.sp-login-box .logo{
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
+.sp-login-box .logo img{
+    height: 100%;
+}
+.sp-login-box .form-group label{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.sp-login-box .callback {
+    display: none;
+}
 .sp-login-page .sp-login-footer{
     position: absolute;
     width: 100%;
@@ -81,6 +81,7 @@
 .item-chamado span{
     color: #777;
 }
+
 /*ui.bootstrap bugfix'es*/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 /*ui.bootstrap bugfix'es*/
@@ -89,4 +90,23 @@
 .content-wrapper{
     min-height:calc(100vh - 101px)
 }
+.navbar-nav > .user-menu > .dropdown-menu{
+    width:auto;
+    padding:0;
+    box-shadow: 1px 1px 0 #ddd;
+}
+.navbar-nav > .user-menu > .dropdown-menu li{
+    height:44px;
+    line-height:44px;
+    padding:0 10px;
+}
+    .navbar-nav > .user-menu > .dropdown-menu li:hover{
+        background-color: #ecf0f5;
+    }
+.navbar-nav > .user-menu > .dropdown-menu li .fa{
+    width:16px;
+    text-align: center;
+    margin-right: 7px;
+}
+
 /*template bugfix'es*/
