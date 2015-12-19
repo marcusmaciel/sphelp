@@ -30,8 +30,8 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="fa fa-life-ring"></i> 
-                    <span>Chamados</span>
+                    <i class="fa fa-files-o"></i> 
+                    <span>Relatórios</span>
                 </a>
             </li>
 
