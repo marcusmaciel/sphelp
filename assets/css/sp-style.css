@@ -1,17 +1,17 @@
 /*design boost*/
 html{
-    background: #dbf1d5;
-    background: -moz-linear-gradient(-45deg,  #dbf1d5 0%, #0e7132 100%);
-    background: -webkit-linear-gradient(-45deg,  #dbf1d5 0%,#0e7132 100%);
-    background: linear-gradient(135deg,  #dbf1d5 0%,#0e7132 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbf1d5', endColorstr='#0e7132',GradientType=1 );
+    background: url("../img/bgr.svg") center center;
+    background-size:cover;
 }
+@-webkit-keyframes img-lazyload { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes img-lazyload { from { opacity:1; } to { opacity:0; } }
+@-o-keyframes img-lazyload { from { opacity:1; } to { opacity:0; } }
+@keyframes img-lazyload { from { opacity:1; } to { opacity:0; } }
 /*design boost*/
 
 /*modulo/loginPage*/
 .sp-login-page{
-    background: url("../img/bgr.svg") center center;
-    background-size:cover;
+    z-index:2;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -24,6 +24,7 @@ html{
     animation: all 0.2s ease-in-out;
 }
 .sp-login-page .sp-login-box{
+    opacity:1!important;
     width: 300px;
     height: auto;
     display: block;
@@ -67,6 +68,7 @@ html{
 /*modulo/Home*/
 .logo-lg img,
 .logo-mini img{
+    animation: 0.5s all ease-in-out;
     max-height: 35px;
 }
 .info-box{
