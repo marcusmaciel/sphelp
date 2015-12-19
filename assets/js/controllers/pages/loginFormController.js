@@ -47,7 +47,7 @@ define(function () {
             });
         };
     }
- 
+
     ctrl.$inject = [
         '$scope',
         '$http',
