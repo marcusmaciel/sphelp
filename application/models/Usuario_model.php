@@ -10,6 +10,7 @@ class Usuario_model extends CI_Model {
     var $_d = '';
     var $login = '';
     var $senha = '';
+    var $nome = '';
     //colunas não alteráveis
     var $column_blocks = array('_i', '_d');
 
@@ -48,6 +49,12 @@ class Usuario_model extends CI_Model {
     public function getByLogin($login) {
 
         return $this->db->get_where($this->table, array('login' => $login))->result();
+    }
+
+    //busca pelo nome
+    public function getByNome($nome) {
+
+        return $this->db->get_where($this->table, array('nome' => $nome))->result();
     }
 
     //autentica os usuários

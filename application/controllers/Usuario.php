@@ -57,6 +57,10 @@ class Usuario extends CI_Controller {
             case 'login' :
                 $result = $this->Usuario->getByLogin($valor);
                 break;
+            //nome -> string
+            case 'nome' :
+                $result = $this->Usuario->getByNome($valor);
+                break;
             //index -> int
             default :
                 $result = $this->Usuario->getBy_i($valor);
