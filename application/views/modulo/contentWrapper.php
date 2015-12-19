@@ -5,7 +5,7 @@
     <section class="content">
 
         <div class="row">
-            
+
             <!--área dinamica (manipulável sobre as ações do menu)-->
             <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
                 <div class="box box-success">
@@ -21,7 +21,7 @@
                     <!-- /.box-body -->
                 </div><!-- /.box -->
             </div>
-            
+
             <!--chamados em aberto (fixa em todo o sistema)-->
             <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
                 <div class="box">
@@ -39,11 +39,12 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table table-bordered">
-                            <tbody><tr>
-                                    <th style="width: 40px">Id</th>
-                                    <th>Empresa</th>
+                            <tbody>
+                                <tr>
+                                    <th style="width: 40px;">Id</th>
+                                    <th style="width:35%">Empresa</th>
                                     <th>Descrição</th>
-                                    <th style="width: 40px">Data/Hora</th>
+                                    <th style="width: 40px;">SLA</th>
                                 </tr>
                                 <tr>
                                     <td>1.</td>
