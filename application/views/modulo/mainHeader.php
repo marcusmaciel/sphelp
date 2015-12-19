@@ -114,7 +114,7 @@
                        tooltip-placement="bottom"
                        data-toggle="tooltip" uib-tooltip="informações do usuário">
                         <i class="fa fa-user"></i>
-                        <span class="hidden-xs"><?php echo $login; ?></span>
+                        <span class="hidden-xs"><?php echo $nome; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- perfil do usuario -->
