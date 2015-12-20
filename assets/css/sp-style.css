@@ -134,7 +134,7 @@ html{
     overflow: hidden;
     white-space: nowrap;
 }
-.table.table-fixed td.cover.active{
+.table.table-fixed tr:focus td.cover{
     white-space: normal;
 }
 .sp-text-overflow-ellipsis{

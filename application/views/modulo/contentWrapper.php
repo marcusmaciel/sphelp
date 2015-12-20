@@ -43,10 +43,10 @@
                                 <tr>
                                     <th class="text-center" style="width: 40px;">#</th>
                                     <th style="width:35%">Empresa</th>
-                                    <th style="width:calc(65%-80px);">Descrição</th>
-                                    <th style="width: 40px;">SLA</th>
+                                    <th>Descrição</th>
+                                    <th>SLA</th>
                                 </tr>
-                                <tr>
+                                <tr tabindex="-1">
                                     <td class="text-center"><a href="#">1</a></td>
                                     <td>Update software</td>
                                     <td class="cover">
