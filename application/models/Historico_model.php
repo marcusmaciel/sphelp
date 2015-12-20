@@ -4,6 +4,7 @@ class Historico_model extends CI_Model {
 
     //tabela
     var $table = 'Historico';
+    var $references = array();
     //colunas
     var $_i = null;
     var $_s = '';
