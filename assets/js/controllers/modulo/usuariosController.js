@@ -6,8 +6,6 @@ define(function () {
             $http
             ) {
 
-        //mensagem sobre o usuário
-        $scope.callbackMessage = null;
         $scope.listarUsuarios = function () {
 
             $http({
