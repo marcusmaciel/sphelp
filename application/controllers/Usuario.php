@@ -4,6 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Controller {
 
+    //retorna no formato json
+    private function toJson($data) {
+        $this->output
+                ->set_content_type('application/json; charset=utf-8')
+                ->set_output(json_encode($data));
+    }
+
     //ver se o login, senha estão certos e se esse usuário está ativo
     public function autenticar() {
 
@@ -41,7 +48,10 @@ class Usuario extends CI_Controller {
         $this->load->model('Usuario_model', 'Usuario');
 
         //usa a chave para selecionar uma variante
-        echo json_encode($this->Usuario->get($this->input->post()));
+        $result = $this->Usuario->get($this->input->post());
+        
+        //retorna em json válido
+        $this->toJson($result);
     }
 
 }
