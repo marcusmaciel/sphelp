@@ -42,13 +42,15 @@ class Page extends CI_Controller {
         );
         $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', $componentes, true);
         //mainFooter
-        $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', $this->versaoSistema(), true);
+        $Versao = $this->versaoSistema();
+        $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', $Versao, true);
         $this->load->view('index', $this->template);
     }
 
     //carrega view login
     private function login() {
-        $this->template['loginPage'] = $this->load->view('modulo/loginPage', '', true);
+        $Versao = $this->versaoSistema();
+        $this->template['loginPage'] = $this->load->view('modulo/loginPage', $Versao, true);
         $this->load->view('index', $this->template);
     }
 
@@ -60,7 +62,7 @@ class Page extends CI_Controller {
     //retorna a versão do sistema
     private function versaoSistema() {
         $this->load->model('Versao_model', 'Versao');
-        return $this->Versao->get();
+        return $this->Versao->get()[0];
     }
 
 }

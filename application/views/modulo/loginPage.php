@@ -56,7 +56,7 @@
 
 
         <div class="versao">
-            Versão <b>alpha</b>
+            Versão <b><?php if (isset($numero)) echo $numero; ?></b>
         </div><!--versao-->
 
     </div><!--sp-login-footer-->
