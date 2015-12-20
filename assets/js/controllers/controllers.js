@@ -6,12 +6,14 @@ define(function (require) {
             controllers = angular.module('app.controllers', []);
 
     controllers
-            //pages
+            //modulo
             .controller('loginFormController', require('controllers/pages/loginFormController'))
             .controller('headerUsuarioController', require('controllers/layout/headerUsuarioController'))
             .controller('usuariosController', require('controllers/pages/usuariosController'))
-            .controller('dinamicPartialController', require('controllers/layout/dinamicPartialController'))
-            //components
+            
+            //componente
+            .controller('chamadosController', require('controllers/componente/chamadosController'))
+            
             ;
 
     return controllers;
