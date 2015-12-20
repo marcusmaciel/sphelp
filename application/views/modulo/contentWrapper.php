@@ -38,13 +38,13 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body" id="info-chamados">
-                        <table class="table table-bordered table-fixed">
+                        <table class="table table-condensed table-hover table-fixed">
                             <tbody>
                                 <tr>
                                     <th class="text-center" style="width: 40px;">#</th>
                                     <th style="width:35%">Empresa</th>
                                     <th>Descrição</th>
-                                    <th>SLA</th>
+                                    <th style="width: 70px">SLA</th>
                                 </tr>
                                 <tr tabindex="-1">
                                     <td class="text-center"><a href="#">1</a></td>
@@ -54,9 +54,9 @@
                                         Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, 
                                         permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a
                                     </td>
-                                    <td><span class="badge bg-red">55%</span></td>
+                                    <td><span class="badge">aberto</span></td>
                                 </tr>
-                                <tr>
+                                <tr tabindex="-1">
                                     <td class="text-center"><a href="#">2</a></td>
                                     <td>Clean database</td>
                                     <td class="cover">
@@ -64,29 +64,30 @@
                                         de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso escrito escondido no meio do texto. 
                                         Todos os geradores de Lorem Ipsum na internet tendem a repetir pedaços predefinidos conforme necessário.
                                     </td>
-                                    <td><span class="badge bg-yellow">70%</span></td>
+                                    <td><span class="badge">aberto</span></td>
                                 </tr>
                                 <tr>
                                     <td class="text-center"><a href="#">3</a></td>
                                     <td>Cron job running</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                                        </div>
+                                    <td class="cover">
+                                        impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. 
+                                        Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, 
+                                        permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a
                                     </td>
-                                    <td><span class="badge bg-light-blue">30%</span></td>
+                                    <td><span class="badge">aberto</span></td>
                                 </tr>
                                 <tr>
                                     <td class="text-center"><a href="#">4</a></td>
                                     <td>Fix and squish bugs</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                                        </div>
+                                    <td class="cover">
+                                        impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. 
+                                        Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, 
+                                        permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a
                                     </td>
-                                    <td><span class="badge bg-green">90%</span></td>
+                                    <td><span class="badge">aberto</span></td>
                                 </tr>
-                            </tbody></table>
+                            </tbody>
+                        </table>
                     </div>
                     <!-- /.box-body -->
                 </div><!-- /.box -->
