@@ -2,49 +2,91 @@
 
 class Cliente_model extends CI_Model {
 
+    //tabela
+    var $table = 'Cliente';
+    //colunas
     var $_i = null;
     var $_s = '';
     var $_d = '';
-    var $Cliente_i = null;
-    var $TipoContato_i = null;
-    var $ClasseContato_i = null;
-    var $descricao = '';
-    var $observacao = '';
+    var $primeiroNome = '';
+    var $segundoNome = '';
+    var $contrato = null;
+    var $cn = '';
+    var $email = '';
+    //colunas não alteráveis
+    var $column_blocks = array('_i', '_d');
 
     function __construct() {
         parent::__construct();
     }
 
-    public function getById($_i) {
-        
+    //busca usando as informações enviadas
+    public function get($data = array()) {
+
+        foreach ($data as $key => $value) {
+            $this->db->where($key, $value);
+        }
+
+        return $this->db->get($this->table)->result();
     }
 
-    public function getByCliente($Cliente_i) {
-        
-    }
-
-    public function getByTipoContato($Cliente_i = null, $TipoContato_i) {
-        
-    }
-
-    public function getByClasseContato($Cliente_i = null, $ClasseContato_i) {
-        
-    }
-
-    public function getByDescricao($descricao) {
-        
-    }
-
+    //cadastra um novo usuário
     public function post($data) {
-        
+
+        //insere na tabeça
+        $this->db->insert($this->table, $data);
+
+        return $this->insert_id();
     }
 
+    //atualiza um cliente
     public function put($data) {
-        
+
+        //define o $index de update
+        $this->db->where('_i', $data->_i);
+
+        //exlui elementos que não devem atualizar
+        $values = $data;
+        foreach ($column_blocks as $column) {
+            unset($values[array_search($column, $values)]);
+        };
+
+        //check para atualizar e retorna status
+        if ($this->db->update($this->table, $values)) {
+            return true;
+        } else {
+            return false;
+        };
     }
 
+    //deleta (oculta um usuário se houver movimentação)
     public function delete($_i) {
-        
+
+        //array de verificação
+        $check = array();
+
+        //tabelas que serão analisadas
+        $tables = array('Chamado');
+
+        //pra cada tabela, veja se há registros deste _i
+        foreach ($tables as $table) {
+            $this->db->where($this->table . '_i', $_i);
+            $query = $this->db->count_all($tables[$table]);
+            if ($query != 0) {
+                $check[$table] = $query;
+            }
+        }
+
+        //se não houver registros, delete
+        if (count($check) == 0) {
+            $this->db->delete($this->table, array('_i' => $_i));
+            return true;
+        }
+
+        //caso contrário retorne as tabelas e a quantidade de registros
+        else {
+            return $check;
+        }
     }
 
 }
