@@ -18,50 +18,14 @@ class Usuario_model extends CI_Model {
         parent::__construct();
     }
 
-    //busca pelo _i (1 ou todos)
-    public function getBy_i($_i = null) {
+    //busca usando as informações enviadas
+    public function get($data = array()) {
 
-        //lista somente o usuário que foi solicitado se pedir
-        if ($_i != null) {
-            $this->db->where('_i', $_i);
-        };
-
-        return $this->db->get($this->table)->result();
-    }
-
-    //busca pelo status
-    public function getBy_s($_s = 'ativo') {
-
-        return $this->db->get_where($this->table, array('_s' => $_s))->result();
-    }
-
-    //busca por data criado (entre 2 _d)
-    public function getBy_d($dataIni, $dataEnd) {
-
-        //define o filtro BETWEEN para pesquisar por data
-        $this->db->where('_d >=', $dataIni);
-        $this->db->where('_d <=', $dataEnd);
+        foreach ($data as $key => $value) {
+            $this->db->where($key, $value);
+        }
 
         return $this->db->get($this->table)->result();
-    }
-
-    //busca pelo login
-    public function getByLogin($login) {
-
-        return $this->db->get_where($this->table, array('login' => $login))->result();
-    }
-
-    //busca pelo nome
-    public function getByNome($nome) {
-
-        return $this->db->get_where($this->table, array('nome' => $nome))->result();
-    }
-
-    //autentica os usuários
-    public function getAutenticar($login, $senha) {
-
-        //retorna somente registros que batem com as var's e que estejam "ativos"
-        return $this->db->get_where($this->table, array('_s' => 'ativo', 'login' => $login, 'senha' => $senha))->result();
     }
 
     //cadastra um novo usuário
