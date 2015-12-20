@@ -4,6 +4,9 @@ class ClasseContato_model extends CI_Model {
 
     //tabela
     var $table = 'ClasseContato';
+    var $references = array(
+        'ClienteContato'
+    );
     //colunas
     var $_i = null;
     var $descricao = '';
@@ -14,16 +17,17 @@ class ClasseContato_model extends CI_Model {
         parent::__construct();
     }
 
-    //busca pelo _i (1 ou todos)
-    public function get($_i = null) {
+    //busca usando as informações enviadas
+    public function get($data = array()) {
 
-        if ($_i != null) {
-            $this->db->where('_i', $_i);
-        };
+        foreach ($data as $key => $value) {
+            $this->db->where($key, $value);
+        }
 
         return $this->db->get($this->table)->result();
     }
 
+    //cadastra um novo usuário
     public function post($data) {
 
         //insere na tabeça
@@ -32,15 +36,16 @@ class ClasseContato_model extends CI_Model {
         return $this->insert_id();
     }
 
+    //atualiza um cliente
     public function put($data) {
 
         //define o $index de update
-        $this->db->where($data->_i);
+        $this->db->where('_i', $data->_i);
 
         //exlui elementos que não devem atualizar
         $values = $data;
         foreach ($column_blocks as $column) {
-            unset($values[array_search($column_blocks[$column], $values)]);
+            unset($values[array_search($column, $values)]);
         };
 
         //check para atualizar e retorna status
@@ -51,24 +56,25 @@ class ClasseContato_model extends CI_Model {
         };
     }
 
+    //deleta (oculta um usuário se houver movimentação)
     public function delete($_i) {
 
         //array de verificação
         $check = array();
 
         //tabelas que serão analisadas
-        $tables = array('ClienteContato');
+        $tables = $this->references;
 
         //pra cada tabela, veja se há registros deste _i
         foreach ($tables as $table) {
-            $this->db->where('ClasseContato_i', $_i);
+            $this->db->where($this->table . '_i', $_i);
             $query = $this->db->count_all($tables[$table]);
             if ($query != 0) {
-                $check[$tables[$table]] = $query;
+                $check[$table] = $query;
             }
         }
 
-        //se não houver registros delete
+        //se não houver registros, delete
         if (count($check) == 0) {
             $this->db->delete($this->table, array('_i' => $_i));
             return true;
