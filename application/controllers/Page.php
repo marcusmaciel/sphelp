@@ -25,16 +25,27 @@ class Page extends CI_Controller {
 
     //carrega view home
     private function home() {
-        
+
+        //mainHeader
         $Usuario = $this->session->userdata('Usuario')[0];
-        
         $this->template['mainHeader'] = $this->load->view('modulo/mainHeader', $Usuario, true);
+        //mainSidebar(menu)
         $this->template['mainSidebar'] = $this->load->view('modulo/mainSidebar', '', true);
-        $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', '', true);
-        $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', '', true);
+        //contentWrapper
+        $componentes = array(
+            'leftCol' => array(
+                'estatisticas' => $this->load->view('componente/estatisticas', '', true)
+            ),
+            'rightCol' => array(
+                'chamadosEmAberto' => $this->load->view('componente/chamadosEmAberto', '', true)
+            )
+        );
+        $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', $componentes, true);
+        //mainFooter
+        $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', $this->versaoSistema(), true);
         $this->load->view('index', $this->template);
     }
-    
+
     //carrega view login
     private function login() {
         $this->template['loginPage'] = $this->load->view('modulo/loginPage', '', true);
@@ -44,6 +55,12 @@ class Page extends CI_Controller {
     //verifica se a sessão está ativa
     private function sessao() {
         return $this->session->has_userdata('Usuario');
+    }
+
+    //retorna a versão do sistema
+    private function versaoSistema() {
+        $this->load->model('Versao_model', 'Versao');
+        return $this->Versao->get();
     }
 
 }
