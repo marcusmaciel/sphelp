@@ -32,7 +32,7 @@ class Usuario_model extends CI_Model {
         return $this->db->get($this->table)->result();
     }
 
-    //cadastra um novo usuário
+    //cadastra
     public function post($data) {
 
         //insere na tabeça
@@ -41,7 +41,7 @@ class Usuario_model extends CI_Model {
         return $this->insert_id();
     }
 
-    //atualiza um cliente
+    //atualiza
     public function put($data) {
 
         //define o $index de update
