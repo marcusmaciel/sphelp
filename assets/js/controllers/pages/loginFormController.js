@@ -8,9 +8,6 @@ define(function () {
             alertify
             ) {
 
-        alertify.log('adasdsada');
-        //mensagem sobre o usuário
-        $scope.callbackMessage = null;
         $scope.autenticar = function (form) {
 
             $http({
@@ -25,26 +22,13 @@ define(function () {
 
                 } else { //não passou
 
-                    $scope.callbackMessage = {
-                        text: 'usuário ou senha incorreta.',
-                        class: 'alert-info'
-                    };
-
-                    $timeout(function () {
-                        $scope.callbackMessage = null;
-                    }, 3000);
+                    alertify.info('usuário ou senha inválida');
+                    
                 }
 
             }, function () { //ocorreu algum erro no servidor
 
-                $scope.callbackMessage = {
-                    text: 'Oops... ocorreu um erro no servidor. tente novamente mais tarde',
-                    class: 'alert-warning'
-                };
-
-                $timeout(function () {
-                    $scope.callbackMessage = null;
-                }, 3000);
+                alertify.error('Oops... ocorreu um erro no servidor. tente novamente mais tarde');
 
             });
         };
