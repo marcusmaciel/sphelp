@@ -3,5 +3,17 @@
 .main-header .logo-mini img{
     max-height:35px;
 }
-
+.box .box-tools{
+    display: flex;
+    justify-content: space-between;
+}
+.box .box-tools {
+    display: flex;
+    justify-content: space-between;
+}
+.box .box-tools .btn-box-tool{
+    width:29px;
+    height: 29px;
+    text-align: center;
+}
 /*bootstrap*/
