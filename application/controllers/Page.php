@@ -13,7 +13,6 @@ class Page extends CI_Controller {
 
         //criando cabeçalho e injetando scripts primários
         $this->template['head'] = $this->load->view('modulo/head', '', true);
-        $this->template['scripts'] = $this->load->view('modulo/scripts', '', true);
 
         //usuario não autenticado ou sessão expirada
         if ($this->sessao() == false) {
@@ -37,7 +36,7 @@ class Page extends CI_Controller {
                 'estatisticas' => $this->load->view('componente/estatisticas', '', true)
             ),
             'rightCol' => array(
-                'chamadosEmAberto' => $this->load->view('componente/chamadosEmAberto', '', true)
+                'chamados' => $this->load->view('componente/chamados', '', true)
             )
         );
         $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', $componentes, true);
