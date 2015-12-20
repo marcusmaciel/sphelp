@@ -7,9 +7,9 @@ define(function (require) {
 
     controllers
             //modulo
-            .controller('loginFormController', require('controllers/pages/loginFormController'))
-            .controller('headerUsuarioController', require('controllers/layout/headerUsuarioController'))
-            .controller('usuariosController', require('controllers/pages/usuariosController'))
+            .controller('loginFormController', require('controllers/modulo/loginFormController'))
+            .controller('mainHeaderController', require('controllers/modulo/mainHeaderController'))
+            .controller('usuariosController', require('controllers/modulo/usuariosController'))
             
             //componente
             .controller('chamadosController', require('controllers/componente/chamadosController'))
