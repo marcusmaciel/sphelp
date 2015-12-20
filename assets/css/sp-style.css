@@ -125,6 +125,19 @@ html{
 }
 /*template bugfix'es*/
 /*utility*/
+.sp-text-overflow-ellipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/*utility*/
+#info-chamados a{
+    display: block;
+    color: #008749;
+    font-weight: bold;
+}
+
+/*bootstrap upgrade*/
 .table.table-fixed{
     table-layout: fixed;
     width:100%;
@@ -137,15 +150,7 @@ html{
 .table.table-fixed tr:focus td.cover{
     white-space: normal;
 }
-.sp-text-overflow-ellipsis{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-/*utility*/
-#info-chamados a{
-    display: block;
-    color: #008749;
-    font-weight: bold;
-}
-/*template bugfix'es*/
+@media (min-width: 480px) {.table td[sp-hide-xs]{ display:none}}
+@media (min-width: 481px) and (max-width:768px) {.table td[sp-hide-sm]{ display:none}}
+@media (min-width: 769px) and (max-width:992px) {.table td[sp-hide-md]{ display:none}}
+@media (min-width: 993px) {.table td[sp-hide-lg]{ display:none}}
