@@ -122,7 +122,7 @@ angular.module("ngAlertify", []).factory("alertify", function() {
                     }
                 }
                 , reset:function() {
-                    this.theme("default"), this.okBtn(this.defaultOkLabel), this.cancelBtn(this.defaultCancelLabel), this.setMaxLogItems(), this.promptValue="", this.promptPlaceholder="", this.delay=this.defaultDelay, this.setCloseLogOnClick(this.closeLogOnClickDefault), this.setLogPosition("bottom right")
+                    this.theme("bootstrap"), this.okBtn(this.defaultOkLabel), this.cancelBtn(this.defaultCancelLabel), this.setMaxLogItems(), this.promptValue="", this.promptPlaceholder="", this.delay=this.defaultDelay, this.setCloseLogOnClick(this.closeLogOnClickDefault), this.setLogPosition("bottom right")
                 }
                 , injectCSS:function() {
                     if(!document.querySelector("#alertifyCSS")) {
