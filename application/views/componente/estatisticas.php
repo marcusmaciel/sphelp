@@ -1,4 +1,4 @@
-<div class="box box-success" id="dinamicPartial">
+<div class="box box-success">
     <div class="box-header with-border">
         <h3 class="box-title">
             Estatísticas
