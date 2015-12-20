@@ -1,7 +1,7 @@
 <!--modulo/mainFooter (desktop & tablet)-->
 <footer class="main-footer">
     <div class="pull-right">
-        <b>Version</b> Alpha
+        <b>Version</b> <?php if (isset($numero)) echo $numero; ?>
     </div>
     <strong>
         <span class="hidden-xs">Copyright &copy; 2000-2015 </span>
