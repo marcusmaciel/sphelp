@@ -4,6 +4,10 @@ class Usuario_model extends CI_Model {
 
     //tabela
     var $table = 'Usuario';
+    var $references = array(
+        'Chamado',
+        'Historico'
+    );
     //colunas
     var $_i = null;
     var $_s = '';
@@ -37,16 +41,16 @@ class Usuario_model extends CI_Model {
         return $this->insert_id();
     }
 
-    //atualiza um usuário
+    //atualiza um cliente
     public function put($data) {
 
         //define o $index de update
-        $this->db->where($data->_i);
+        $this->db->where('_i', $data->_i);
 
         //exlui elementos que não devem atualizar
         $values = $data;
         foreach ($column_blocks as $column) {
-            unset($values[array_search($column_blocks[$column], $values)]);
+            unset($values[array_search($column, $values)]);
         };
 
         //check para atualizar e retorna status
@@ -64,18 +68,18 @@ class Usuario_model extends CI_Model {
         $check = array();
 
         //tabelas que serão analisadas
-        $tables = array('Atendimento', 'Chamado', 'Historico');
+        $tables = $this->references;
 
         //pra cada tabela, veja se há registros deste _i
         foreach ($tables as $table) {
-            $this->db->where('Usuario_i', $_i);
+            $this->db->where($this->table . '_i', $_i);
             $query = $this->db->count_all($tables[$table]);
             if ($query != 0) {
-                $check[$tables[$table]] = $query;
+                $check[$table] = $query;
             }
         }
 
-        //se não houver registros delete o usuário
+        //se não houver registros, delete
         if (count($check) == 0) {
             $this->db->delete($this->table, array('_i' => $_i));
             return true;
