@@ -43,16 +43,16 @@
                                 <tr>
                                     <th style="width: 40px;">Id</th>
                                     <th style="width:35%">Empresa</th>
-                                    <th>Descrição</th>
+                                    <th style="width:calc(65%-80px);">Descrição</th>
                                     <th style="width: 40px;">SLA</th>
                                 </tr>
                                 <tr>
                                     <td>1.</td>
                                     <td>Update software</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                        </div>
+                                    <td style="overflow:hidden">
+                                        impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. 
+                                        Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, 
+                                        permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a
                                     </td>
                                     <td><span class="badge bg-red">55%</span></td>
                                 </tr>
@@ -60,9 +60,9 @@
                                     <td>2.</td>
                                     <td>Clean database</td>
                                     <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                                        </div>
+                                        ou palavras aleatórias que não parecem nem um pouco convincentes. Se você pretende usar uma passagem 
+                                        de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso escrito escondido no meio do texto. 
+                                        Todos os geradores de Lorem Ipsum na internet tendem a repetir pedaços predefinidos conforme necessário.
                                     </td>
                                     <td><span class="badge bg-yellow">70%</span></td>
                                 </tr>

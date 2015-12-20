@@ -122,8 +122,12 @@ html{
 }
 .navbar-nav > .user-menu > .dropdown-toggle{
     max-width: 150px;
+}
+/*template bugfix'es*/
+/*utility*/
+.sp-text-overflow-ellipsis{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
-/*template bugfix'es*/
+/*utility*/
