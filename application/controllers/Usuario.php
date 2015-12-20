@@ -37,42 +37,11 @@ class Usuario extends CI_Controller {
     //seleciona um ou todos de acordo com a o parametro e o texto de pesquisa
     public function listar() {
 
-        $chave = $this->input->post('chave');
-        $valor = $this->input->post('valor');
-
         //carrega o módulo de usuário para tentar autenticar o mesmo
         $this->load->model('usuario_model', 'Usuario');
 
-        //declara a variável que vai receber o retorno
-        $result = null;
-
         //usa a chave para selecionar uma variante
-        switch ($chave) {
-
-            //status -> "ativo", "inativo"
-            case '_s' :
-                $result = $this->Usuario->getBy_s($valor);
-                break;
-            //data criado -> [$dataIni,$dataEnd]]
-            case '_d' :
-                $result = $this->Usuario->getBy_d($valor[1], $valor[2]);
-                break;
-            //login -> string
-            case 'login' :
-                $result = $this->Usuario->getByLogin($valor);
-                break;
-            //nome -> string
-            case 'nome' :
-                $result = $this->Usuario->getByNome($valor);
-                break;
-            //index -> int
-            default :
-                $result = $this->Usuario->getBy_i($valor);
-                break;
-        };
-
-        //converte o resultado e retorna em JSON
-        echo json_encode($result);
+        echo json_encode($this->Usuario->get($this->input->post()));
     }
 
 }
