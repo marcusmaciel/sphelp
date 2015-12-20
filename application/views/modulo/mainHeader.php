@@ -1,5 +1,5 @@
 <!--modulo/mainHeader-->
-<header class="main-header">
+<header class="main-header" ng-controller="mainHeaderController">
 
     <!-- Logo -->
     <a href="#" class="logo">
@@ -29,7 +29,7 @@
 
                 <!-- atalho:novo chamado -->
                 <li>
-                    <a href="" ng-click="" tooltip-placement="bottom"
+                    <a href=""tooltip-placement="bottom"
                        data-toggle="tooltip" uib-tooltip="novo chamado">
                         <i class="fa fa-plus-circle"></i>
                     </a>
@@ -109,7 +109,7 @@
                 </li>
 
                 <!-- informacoes do usuario -->
-                <li class="dropdown user user-menu"  ng-controller="headerUsuarioController">
+                <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle sp-text-overflow-ellipsis" data-toggle="dropdown"
                        tooltip-placement="bottom"
                        data-toggle="tooltip" uib-tooltip="informações do usuário">
@@ -125,8 +125,8 @@
                 </li>
 
                 <!-- logoff -->
-                <li ng-controller="headerUsuarioController">
-                    <a href="" ng-click="loggout()" tooltip-placement="bottom"
+                <li>
+                    <a href="" ng-click="logoff()" tooltip-placement="bottom"
                        data-toggle="tooltip" uib-tooltip="sair">
                         <i class="fa fa-power-off"></i>
                     </a>
