@@ -3,7 +3,7 @@
 class ClienteContato_model extends CI_Model {
 
     //tabela
-    var $table = 'Usuario';
+    var $table = 'ClienteContato';
     var $references = array();
     //colunas
     var $_i = null;
