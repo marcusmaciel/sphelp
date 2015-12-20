@@ -175,6 +175,8 @@ angular.module("ngAlertify", []).factory("alertify", function () {
                     return t.log(e, "primary", o), this
                 }
                 , info: function (e, o) {
+                    return t.log(e, "info", o), this
+                }
                 , warning: function (e, o) {
                     return t.log(e, "warning", o), this
                 }
