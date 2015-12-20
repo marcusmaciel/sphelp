@@ -42,10 +42,6 @@
 
         </div>
 
-        <div class="alert {{callbackMessage.class}} callback" ng-class="{show : callbackMessage != null}">
-            {{callbackMessage.text}}
-        </div><!--alert-->
-
     </div><!--sp-login-box-->
 
     <div class="sp-login-footer">
