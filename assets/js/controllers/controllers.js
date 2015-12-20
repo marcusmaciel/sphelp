@@ -10,6 +10,7 @@ define(function (require) {
             .controller('loginFormController', require('controllers/pages/loginFormController'))
             .controller('headerUsuarioController', require('controllers/layout/headerUsuarioController'))
             .controller('usuariosController', require('controllers/pages/usuariosController'))
+            .controller('dinamicPartialController', require('controllers/layout/dinamicPartialController'))
             //components
             ;
 

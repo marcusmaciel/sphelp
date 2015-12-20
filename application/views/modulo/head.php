@@ -7,7 +7,7 @@
         document.head.querySelector('script[name=sphelp]').remove();
     </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SPHelp</title>
+    <title>(3) SPHelp</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link href="<?php echo LAYOUT_ASSETS; ?>css/style.css" rel="stylesheet" type="text/css" />
     <script data-main="http://localhost/sphelp/assets/js/main.js" src="<?php echo LAYOUT_ASSETS; ?>plugins/requirejs/require.js"></script>
