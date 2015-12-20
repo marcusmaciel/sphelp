@@ -4,9 +4,11 @@ define(function () {
     function ctrl(
             $scope,
             $http,
-            $timeout
+            $timeout,
+            alertify
             ) {
 
+        alertify.log('adasdsada');
         //mensagem sobre o usuário
         $scope.callbackMessage = null;
         $scope.autenticar = function (form) {
@@ -29,7 +31,7 @@ define(function () {
                     };
 
                     $timeout(function () {
-                        $scope.callbackMessage;
+                        $scope.callbackMessage = null;
                     }, 3000);
                 }
 
@@ -41,7 +43,7 @@ define(function () {
                 };
 
                 $timeout(function () {
-                    $scope.callbackMessage;
+                    $scope.callbackMessage = null;
                 }, 3000);
 
             });
@@ -51,7 +53,8 @@ define(function () {
     ctrl.$inject = [
         '$scope',
         '$http',
-        '$timeout'
+        '$timeout',
+        'alertify'
     ];
 
     return ctrl;

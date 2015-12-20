@@ -5,6 +5,7 @@ require.config({
         /**/angularSanitize: '../plugins/angular/angular-sanitize.min',
         /**/uiRouter: '../plugins/angular/angular-ui-router.min',
         /**/uiBootstrap: '../plugins/angular/angular-ui-bootstrap',
+        /**/ngAlertify: '../plugins/alertify/ngAlertify',
         jquery: '../plugins/jQuery/jQuery-2.1.4.min',
         /**/bootstrap: '../bootstrap/js/bootstrap.min',
         /**/fastclick: '../plugins/fastclick/fastclick.min',
@@ -13,7 +14,8 @@ require.config({
         /**/jvectormap: '../plugins/jvectormap/jquery-jvectormap-1.2.2.min',
         /**/jvectormap_worldMap: '../plugins/jvectormap/jquery-jvectormap-world-mill-en',
         /**/slimScroll: '../plugins/slimScroll/jquery.slimscroll.min',
-        /**/chartjs: '../plugins/chartjs/Chart.min'
+        /**/chartjs: '../plugins/chartjs/Chart.min',
+        /**/alertify: '../plugins/alertify/alertify.min'
     },
     shim: {
         angular: {exports: 'angular'},
@@ -21,6 +23,7 @@ require.config({
         /**/angularSanitize: {deps: ['angular']},
         /**/uiRouter: {deps: ['angular']},
         /**/uiBootstrap: {deps: ['angular', 'jquery']},
+        /**/ngAlertify: {deps: ['angular']},
         jquery: {exports: 'jquery'},
         /**/bootstrap: {deps: ['jquery']},
         /**/fastclick: {deps: ['jquery']},
@@ -29,11 +32,13 @@ require.config({
         /**/jvectormap: {exports: 'jvectormap', deps: ['jquery']},
         /**/jvectormap_worldMap: {deps: ['jquery', 'jvectormap']},
         /**/slimScroll: {deps: ['jquery']},
-        /**/chartjs: {deps: ['jquery']}
+        /**/chartjs: {deps: ['jquery']},
+        /**/alertify: {deps: ['jquery']}
     },
     priority: [
         'angular',
-        'jquery'
+        'jquery',
+        'ngAlertify'
     ]
 });
 require([
@@ -42,6 +47,7 @@ require([
     /**/'angularSanitize',
     /**/'uiRouter',
     /**/'uiBootstrap',
+    /**/'ngAlertify',
     'jquery',
     /**/'bootstrap',
     /**/'fastclick',
@@ -51,6 +57,7 @@ require([
     /**/'jvectormap_worldMap',
     /**/'slimScroll',
     /**/'chartjs',
+    /**/'alertify',
     'config',
     'constants/constants',
     'controllers/controllers',
@@ -58,7 +65,7 @@ require([
     'filters/filters',
     'services/services',
     'values'
-], function (angular, uiRouter, $) {
+], function (angular, uiRouter, $, ngAlertify) {
 
     var app = angular.module('app', [
         'app.config',
@@ -69,7 +76,8 @@ require([
         'app.services',
         'app.values',
         'ui.router',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'ngAlertify'
     ]);
 
     angular.bootstrap(document, ['app']);
