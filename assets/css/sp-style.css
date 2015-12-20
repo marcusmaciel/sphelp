@@ -125,11 +125,24 @@ html{
 }
 /*template bugfix'es*/
 /*utility*/
+.table.table-fixed{
+    table-layout: fixed;
+    width:100%;
+}
+.table.table-fixed td.cover{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.table.table-fixed td.cover.active{
+    white-space: normal;
+}
 .sp-text-overflow-ellipsis{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
+/*utility*/
 #info-chamados a{
     display: block;
     color: #008749;

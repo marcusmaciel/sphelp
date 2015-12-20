@@ -38,7 +38,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body" id="info-chamados">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-fixed">
                             <tbody>
                                 <tr>
                                     <th class="text-center" style="width: 40px;">#</th>
@@ -49,7 +49,7 @@
                                 <tr>
                                     <td class="text-center"><a href="#">1</a></td>
                                     <td>Update software</td>
-                                    <td style="overflow:hidden">
+                                    <td class="cover">
                                         impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. 
                                         Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, 
                                         permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a
@@ -59,7 +59,7 @@
                                 <tr>
                                     <td class="text-center"><a href="#">2</a></td>
                                     <td>Clean database</td>
-                                    <td>
+                                    <td class="cover">
                                         ou palavras aleatórias que não parecem nem um pouco convincentes. Se você pretende usar uma passagem 
                                         de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso escrito escondido no meio do texto. 
                                         Todos os geradores de Lorem Ipsum na internet tendem a repetir pedaços predefinidos conforme necessário.
