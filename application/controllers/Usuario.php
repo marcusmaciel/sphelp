@@ -7,14 +7,18 @@ class Usuario extends CI_Controller {
     //ver se o login, senha estão certos e se esse usuário está ativo
     public function autenticar() {
 
-        $login = $this->input->post('login');
-        $senha = $this->input->post('senha');
-        
         //carrega o módulo de usuário para tentar autenticar o mesmo
         $this->load->model('usuario_model', 'Usuario');
 
+        //filtros de busca do usuário
+        $data = array(
+            '_s' => 'ativo',
+            'login' => $this->input->post('login'),
+            'senha' => $this->input->post('senha')
+        );
+
         //verifica se algum usuário ativo é encontrado
-        $auth = $this->Usuario->getAutenticar($login, $senha);
+        $auth = $this->Usuario->get($data);
 
         if (count($auth) > 0) {
             $this->session->set_userdata('Usuario', $auth);
@@ -35,7 +39,7 @@ class Usuario extends CI_Controller {
 
         $chave = $this->input->post('chave');
         $valor = $this->input->post('valor');
-        
+
         //carrega o módulo de usuário para tentar autenticar o mesmo
         $this->load->model('usuario_model', 'Usuario');
 
@@ -66,7 +70,7 @@ class Usuario extends CI_Controller {
                 $result = $this->Usuario->getBy_i($valor);
                 break;
         };
-        
+
         //converte o resultado e retorna em JSON
         echo json_encode($result);
     }
