@@ -4,6 +4,7 @@ class Configuracao_model extends CI_Model {
 
     //tabela
     var $table = 'Configuracao';
+    var $references = array();
     //colunas
     var $_i = null;
     var $descricao = '';
