@@ -2,7 +2,6 @@ USE sphelp;
 /*create table*/
 CREATE TABLE IF NOT EXISTS `sphelp`.`ClienteEndereco` (
   `_i` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `_s` VARCHAR(50) NOT NULL DEFAULT 'ativo' COMMENT '',
   `_d` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
   `Cliente_i` INT NOT NULL COMMENT '',
   `TipoEndereco_i` INT NOT NULL COMMENT '',
