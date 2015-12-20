@@ -1,4 +1,4 @@
-USE sphelp;
+﻿USE sphelp;
 /*create table*/
 CREATE TABLE IF NOT EXISTS `sphelp`.`Versao` (
   `_i` INT NOT NULL COMMENT '',

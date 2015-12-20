@@ -1,4 +1,4 @@
-USE sphelp;
+﻿USE sphelp;
 /*create table*/
 CREATE TABLE IF NOT EXISTS `sphelp`.`UsuarioSessao` (
     `id` varchar(40) NOT NULL,

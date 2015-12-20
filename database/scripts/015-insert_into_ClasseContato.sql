@@ -1,4 +1,4 @@
-USE sphelp;
+﻿USE sphelp;
 /*inserts*/
 INSERT INTO `sphelp`.`ClasseContato` (`_i`, `descricao`) SELECT * FROM (SELECT 1, 'email') AS tmp WHERE NOT EXISTS (SELECT `_i` FROM `sphelp`.`ClasseContato` WHERE `_i` = 1) LIMIT 1;
 INSERT INTO `sphelp`.`ClasseContato` (`_i`, `descricao`) SELECT * FROM (SELECT 2, 'celular') AS tmp WHERE NOT EXISTS (SELECT `_i` FROM `sphelp`.`ClasseContato` WHERE `_i` = 2) LIMIT 1;
