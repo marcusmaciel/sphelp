@@ -110,7 +110,7 @@
 
                 <!-- informacoes do usuario -->
                 <li class="dropdown user user-menu"  ng-controller="headerUsuarioController">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                    <a href="#" class="dropdown-toggle sp-text-overflow-ellipsis" data-toggle="dropdown"
                        tooltip-placement="bottom"
                        data-toggle="tooltip" uib-tooltip="informações do usuário">
                         <i class="fa fa-user"></i>
@@ -123,7 +123,7 @@
                         <li><i class="fa fa-line-chart"></i> Estatísticas</li>
                     </ul>
                 </li>
-                
+
                 <!-- logoff -->
                 <li ng-controller="headerUsuarioController">
                     <a href="" ng-click="loggout()" tooltip-placement="bottom"
