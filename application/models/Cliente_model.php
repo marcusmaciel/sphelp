@@ -4,6 +4,9 @@ class Cliente_model extends CI_Model {
 
     //tabela
     var $table = 'Cliente';
+    var $references = array(
+        'Chamado'
+    );
     //colunas
     var $_i = null;
     var $_s = '';
@@ -66,7 +69,7 @@ class Cliente_model extends CI_Model {
         $check = array();
 
         //tabelas que serão analisadas
-        $tables = array('Chamado');
+        $tables = $this->references;
 
         //pra cada tabela, veja se há registros deste _i
         foreach ($tables as $table) {
