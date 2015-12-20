@@ -8,7 +8,7 @@ class Usuario extends CI_Controller {
     public function autenticar() {
 
         //carrega o módulo de usuário para tentar autenticar o mesmo
-        $this->load->model('usuario_model', 'Usuario');
+        $this->load->model('Usuario_model', 'Usuario');
 
         //filtros de busca do usuário
         $data = array(
@@ -38,7 +38,7 @@ class Usuario extends CI_Controller {
     public function listar() {
 
         //carrega o módulo de usuário para tentar autenticar o mesmo
-        $this->load->model('usuario_model', 'Usuario');
+        $this->load->model('Usuario_model', 'Usuario');
 
         //usa a chave para selecionar uma variante
         echo json_encode($this->Usuario->get($this->input->post()));
