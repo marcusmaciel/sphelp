@@ -130,4 +130,9 @@ html{
     overflow: hidden;
     white-space: nowrap;
 }
-/*utility*/
+#info-chamados a{
+    display: block;
+    color: #008749;
+    font-weight: bold;
+}
+/*template bugfix'es*/

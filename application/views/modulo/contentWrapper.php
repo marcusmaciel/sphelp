@@ -7,8 +7,8 @@
         <div class="row">
 
             <!--área dinamica (manipulável sobre as ações do menu)-->
-            <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
-                <div class="box box-success">
+            <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12" ng-controller="dinamicPartialController">
+                <div class="box box-success" id="dinamicPartial">
                     <div class="box-header with-border">
                         <h3 class="box-title">
                             Estatísticas
@@ -37,17 +37,17 @@
                         </div>
                     </div>
                     <!-- /.box-header -->
-                    <div class="box-body">
+                    <div class="box-body" id="info-chamados">
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>
-                                    <th style="width: 40px;">Id</th>
+                                    <th class="text-center" style="width: 40px;">#</th>
                                     <th style="width:35%">Empresa</th>
                                     <th style="width:calc(65%-80px);">Descrição</th>
                                     <th style="width: 40px;">SLA</th>
                                 </tr>
                                 <tr>
-                                    <td>1.</td>
+                                    <td class="text-center"><a href="#">1</a></td>
                                     <td>Update software</td>
                                     <td style="overflow:hidden">
                                         impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. 
@@ -57,7 +57,7 @@
                                     <td><span class="badge bg-red">55%</span></td>
                                 </tr>
                                 <tr>
-                                    <td>2.</td>
+                                    <td class="text-center"><a href="#">2</a></td>
                                     <td>Clean database</td>
                                     <td>
                                         ou palavras aleatórias que não parecem nem um pouco convincentes. Se você pretende usar uma passagem 
@@ -67,7 +67,7 @@
                                     <td><span class="badge bg-yellow">70%</span></td>
                                 </tr>
                                 <tr>
-                                    <td>3.</td>
+                                    <td class="text-center"><a href="#">3</a></td>
                                     <td>Cron job running</td>
                                     <td>
                                         <div class="progress progress-xs progress-striped active">
@@ -77,7 +77,7 @@
                                     <td><span class="badge bg-light-blue">30%</span></td>
                                 </tr>
                                 <tr>
-                                    <td>4.</td>
+                                    <td class="text-center"><a href="#">4</a></td>
                                     <td>Fix and squish bugs</td>
                                     <td>
                                         <div class="progress progress-xs progress-striped active">

@@ -1,11 +1,11 @@
 <!--modulo/mainSidebar-->
-<aside class="main-sidebar">
+<aside class="main-sidebar" ng-controller="dinamicPartialController">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li>
-                <a href="#">
+                <a href="" ng-click="configuracoes()">
                     <i class="fa fa-cogs"></i> 
                     <span>Configurações</span>
                 </a>
