@@ -7,7 +7,7 @@ define(['angular'], function (angular) {
                     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
                     $httpProvider.defaults.transformRequest = function (data) {
                         var data = data || {};
-                        if (window.sphelp !== 'undefined') {
+                        if (window.sphelp !== undefined) {
                             data[window.sphelp[0]] = window.sphelp[1];
                         }
                         ;
