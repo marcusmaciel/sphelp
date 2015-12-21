@@ -23,7 +23,7 @@
                     <th class="text-center" style="width: 40px;">#</th>
                     <th>Empresa</th>
                     <th class="hidden-xs">Descrição</th>
-                    <th class="hidden-xs" style="width:125px">SLA</th>
+                    <th class="hidden-xs">Tempo de espera</th>
                 </tr>
                 <tr tabindex="-1" ng-repeat="chamado in listaChamados">
                     <td class="text-center">
@@ -37,7 +37,7 @@
                         {{chamado.descricao}}
                     </td>
                     <td class="hidden-xs">
-                        <span class="badge">{{chamado._d| date:'MM/dd/yyyy'}}</span>
+                        <span class="badge">{{chamado.sla}}</span>
                     </td>
                 </tr>
             <tbody>

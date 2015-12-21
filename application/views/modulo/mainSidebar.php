@@ -1,5 +1,5 @@
 <!--modulo/mainSidebar-->
-<aside class="main-sidebar">
+<aside class="main-sidebar" ng-controller="mainSidebarController">
 
     <section class="sidebar">
 
@@ -28,6 +28,13 @@
                 <a href>
                     <i class="fa fa-files-o"></i> 
                     <span>Relatórios</span>
+                </a>
+            </li><!--/.[name="relatorios"]-->
+
+            <li name="logoff">
+                <a href>
+                    <i class="fa fa-power-off"></i> 
+                    <span>Sair</span>
                 </a>
             </li><!--/.[name="relatorios"]-->
 

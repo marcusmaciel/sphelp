@@ -20,14 +20,18 @@ define(function () {
             $scope.loading = true;
 
             //busca no servidor
-            $http({
-                method: 'POST',
-                url: 'chamado/listar',
-                data: filtros || {}
-            }).then(function (response) { //success
+            $http.post('chamado/listar').then(function (response) { //success
 
+                //pega somente o retorno da resposta
                 var data = response.data;
 
+                //ordena de acordo com a data 
+                data = data.sort(function (a, b) {
+                    var a = new Date(a._d), b = new Date(b._d);
+                    return a - b;
+                });
+
+                //pra cada elemento, calcule o tempo de SLA dele
                 for (var i in data) {
                     data[i].sla = fnService.calc.timeDiff(data[i]._d);
                 }
@@ -35,7 +39,7 @@ define(function () {
                 $scope.listaChamados = data;
                 $scope.loading = false;
 
-            }, function () { //success
+            }, function () { //error
 
                 alertify.error('falha ao carregar os chamados');
                 $scope.loading = false;
