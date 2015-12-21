@@ -6,7 +6,7 @@ define(function (require) {
             filters = angular.module('app.filters', []);
 
     filters
-            .filter('calcSla', require('filters/calcSlaFilter'))
+            //.filter('calcSla', require('filters/calcSlaFilter'))
             ;
 
     return filters;
