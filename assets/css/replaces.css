@@ -17,3 +17,4 @@
     text-align: center;
 }
 /*bootstrap*/
+tbody{ display: table; width: 100%}
