@@ -58,3 +58,6 @@
 }
 /*bootstrap*/
 tbody{ display: table; width: 100%}
+.hidden.show{
+    display: block!important;
+}
