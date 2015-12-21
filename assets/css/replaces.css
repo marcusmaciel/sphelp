@@ -7,14 +7,44 @@
     display: flex;
     justify-content: space-between;
 }
-.box .box-tools {
-    display: flex;
-    justify-content: space-between;
-}
 .box .box-tools .btn-box-tool{
     width:29px;
     height: 29px;
     text-align: center;
+}
+.control-sidebar .control-sidebar-heading{
+    margin: 0;
+    height: auto;
+    padding: 2px 0 2px;
+    text-align: center;
+    display: flex;
+    justify-content:space-around;
+    align-items:center
+}
+.control-sidebar .control-sidebar-menu{
+    padding: 10px;
+    margin:-5px -10px;
+}
+.control-sidebar .control-sidebar-menu > li,{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor:pointer;
+    margin: 0 -10px;
+    padding: 4px 10px;
+}
+.control-sidebar .control-sidebar-menu > li.overlay{
+    justify-content:center;
+}
+.control-sidebar .control-sidebar-menu > li:hover{
+    background:rgba(200,200,200,.1);
+}
+
+.control-sidebar .control-sidebar-menu > li > .menu-info{
+    margin: 0 0 0 10px;
+}
+.control-sidebar .tab-content{
+    padding: 10px
 }
 /*bootstrap*/
 tbody{ display: table; width: 100%}
