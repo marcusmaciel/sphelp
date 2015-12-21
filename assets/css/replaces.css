@@ -48,13 +48,17 @@
     animation: all 0.3s ease-in-out;
     background:rgba(200,200,200,.3);
 }
-
 .control-sidebar .control-sidebar-menu > li > .menu-info{
     overflow: hidden;
     margin: 0 0 0 10px;
 }
 .control-sidebar .tab-content{
     padding: 10px
+}
+.navbar-custom-menu > .navbar-nav > li{
+    min-width: 50px;
+    border-left:1px solid rgba(0,0,0,.1);
+    text-align: center;
 }
 /*bootstrap*/
 tbody{ display: table; width: 100%}
