@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php if ($head) echo $head; ?>
-    <body class="hold-transition skin-green sidebar-mini sidebar-collapse">
+    <body class="hold-transition skin-green sidebar-mini sidebar-collapse control-sidebar-open">
         <div class="wrapper">
             <?php if (isset($mainHeader)) echo $mainHeader; ?>
             <?php if (isset($mainSidebar)) echo $mainSidebar; ?>
