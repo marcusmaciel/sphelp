@@ -12,7 +12,7 @@ define(function (require) {
             .controller('usuariosController', require('controllers/modulo/usuariosController'))
             
             //componente
-            .controller('chamadosController', require('controllers/componente/chamadosController'))
+            .controller('chamadoController', require('controllers/componente/chamadoController'))
             
             ;
 

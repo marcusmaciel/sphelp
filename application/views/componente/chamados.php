@@ -1,4 +1,4 @@
-<div class="box" name="chamados-em-aberto" ng-controller="chamadosController">
+<div class="box" name="chamados-em-aberto" ng-controller="chamadoController">
     <div class="box-header with-border">
         <h3 class="box-title">
             Chamados em aberto
@@ -22,15 +22,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr tabindex="-1">
-                    <td class="text-center"><a href="#">1</a></td>
-                    <td>Update software</td>
-                    <td class="cover hidden-xs">
-                        impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. 
-                        Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, 
-                        permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a
+                <tr tabindex="-1" ng-repeat="chamado in listaChamados">
+                    <td class="text-center">
+                        <a href="#">{{chamado._i}}</a>
                     </td>
-                    <td class="hidden-xs"><span class="badge">aberto</span></td>
+                    <td>
+                        <span ng-if="chamado.primeiroNome">{{chamado.primeiroNome}} </span>
+                        <span ng-if="chamado.segundoNome">({{chamado.segundoNome}})</span>
+                    </td>
+                    <td class="cover hidden-xs">
+                        {{chamado.descricao}}
+                    </td>
+                    <td class="hidden-xs">
+                        <span class="badge bg-yellow"></span>
+                        <span class="badge"></span>
+                        <span class="badge"></span>
+                        <span class="badge"></span>
+                    </td>
                 </tr>
                 <tr tabindex="-1">
                     <td class="text-center"><a href="#">2</a></td>
@@ -66,4 +74,7 @@
         </table>
     </div>
     <!-- /.box-body -->
+    <div class="overlay" ng-if="loading == true">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div><!-- /.overlay -->
 </div><!-- /.box -->
