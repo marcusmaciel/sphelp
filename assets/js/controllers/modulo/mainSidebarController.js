@@ -4,7 +4,8 @@ define(function () {
 
     function ctrl(
             $scope,
-            $http
+            $http,
+            alertify
             ) {
 
         $scope.logoff = function () {
@@ -12,14 +13,15 @@ define(function () {
                     .then(function (d) { //success
                         location.reload();
                     }, function (d) { //error
-                        console.log(d);
+                        alertify.error('ocorreu um erro ao tentar sair do sistema, reinicie seu navegador para forçar o logoff');
                     });
         };
     }
 
     ctrl.$inject = [
         '$scope',
-        '$http'
+        '$http',
+        'alertify'
     ];
 
     return ctrl;
