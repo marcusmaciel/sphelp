@@ -25,7 +25,7 @@
     padding: 10px;
     margin:-5px -10px;
 }
-.control-sidebar .control-sidebar-menu > li,{
+.control-sidebar .control-sidebar-menu > li{
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -36,7 +36,7 @@
 .control-sidebar .control-sidebar-menu > li.overlay{
     text-align: center;
 }
-.control-sidebar .control-sidebar-menu > li:hover:not(.overlay){
+.control-sidebar .control-sidebar-menu > li:hover{
     animation: all 0.3s ease-in-out;
     background:rgba(200,200,200,.1);
 }
