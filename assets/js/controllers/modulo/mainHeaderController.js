@@ -2,25 +2,10 @@ define(function () {
 
     'use strict';
 
-    function ctrl(
-            $scope,
-            $http
-            ) {
-
-        $scope.logoff = function () {
-            $http.post('usuario/logoff')
-                    .then(function (d) { //success
-                        location.reload();
-                    }, function (d) { //error
-                        console.log(d);
-                    });
-        };
+    function ctrl($scope) {
     }
 
-    ctrl.$inject = [
-        '$scope',
-        '$http'
-    ];
+    ctrl.$inject = ['$scope'];
 
     return ctrl;
 
