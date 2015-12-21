@@ -19,11 +19,11 @@
     text-align: center;
     display: flex;
     justify-content:space-around;
-    align-items:center
+    align-items:center;
 }
 .control-sidebar .control-sidebar-menu{
     padding: 10px;
-    margin:-5px -10px;
+    margin:0 -10px -10px;
 }
 .control-sidebar .control-sidebar-menu > li{
     display: flex;
@@ -34,14 +34,23 @@
     padding: 4px 10px;
 }
 .control-sidebar .control-sidebar-menu > li.overlay{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 240px;
+    height: 40px;
+    background: rgba(0,0,0,.5);
+    color: #fff;
     text-align: center;
+    justify-content: center;
 }
-.control-sidebar .control-sidebar-menu > li:hover{
+.control-sidebar .control-sidebar-menu > li:not(.overlay):hover{
     animation: all 0.3s ease-in-out;
     background:rgba(200,200,200,.1);
 }
 
 .control-sidebar .control-sidebar-menu > li > .menu-info{
+    overflow: hidden;
     margin: 0 0 0 10px;
 }
 .control-sidebar .tab-content{
