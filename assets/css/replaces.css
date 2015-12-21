@@ -46,7 +46,7 @@
 }
 .control-sidebar .control-sidebar-menu > li:not(.overlay):hover{
     animation: all 0.3s ease-in-out;
-    background:rgba(200,200,200,.1);
+    background:rgba(200,200,200,.3);
 }
 
 .control-sidebar .control-sidebar-menu > li > .menu-info{
