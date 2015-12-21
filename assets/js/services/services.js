@@ -6,7 +6,7 @@ define(function (require) {
             services = angular.module('app.services', []);
 
     services
-            //.factory('wsService', require('services/wsService'))
+            .factory('fnService', require('services/fnService'))
             ;
 
     return services;
