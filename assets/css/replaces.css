@@ -34,9 +34,10 @@
     padding: 4px 10px;
 }
 .control-sidebar .control-sidebar-menu > li.overlay{
-    justify-content:center;
+    text-align: center;
 }
-.control-sidebar .control-sidebar-menu > li:hover{
+.control-sidebar .control-sidebar-menu > li:hover:not(.overlay){
+    animation: all 0.3s ease-in-out;
     background:rgba(200,200,200,.1);
 }
 
