@@ -1,5 +1,5 @@
 <!--components/head-->
-<head>
+<head app-name="SPHelp">
     <link rel="icon" type="image/png" href="<?php echo LAYOUT_ASSETS; ?>img/logo.png">
     <meta charset="utf-8">
     <script name="sphelp">
