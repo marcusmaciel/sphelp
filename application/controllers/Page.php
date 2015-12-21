@@ -43,6 +43,9 @@ class Page extends CI_Controller {
         //mainFooter
         $Versao = $this->versaoSistema();
         $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', $Versao, true);
+        //controlSidebar
+        $this->template['controlSidebar'] = $this->load->view('modulo/controlSidebar', '', true);
+        //template load
         $this->load->view('index', $this->template);
     }
 
