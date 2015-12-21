@@ -20,6 +20,7 @@ class Chamado extends CI_Controller {
         $result = $this->Chamado->get($this->input->post());
 
         $this->toJson($result);
+ 
     }
 
 }
