@@ -45,10 +45,10 @@ define(["angular"], function (angular) {
                                 s: Math.abs(Math.round(c / 1000) - 1000)
                             };
 
-                    e.d > 0 ? result += e.d + ' dias ' : '';
-                    e.h > 0 ? result += ('0' + e.h).slice(-2) + ':' : '00:';
-                    e.m > 0 ? result += ('0' + e.m).slice(-2) + ':' : '00:';
-                    e.s > 0 ? result += ('0' + e.s).slice(-2) : '00';
+                    e.d > 0 ? r += e.d + ' dias ' : '';
+                    e.h > 0 ? r += ('0' + e.h).slice(-2) + ':' : '00:';
+                    e.m > 0 ? r += ('0' + e.m).slice(-2) + ':' : '00:';
+                    e.s > 0 ? r += ('0' + e.s).slice(-2) : '00';
 
                     return r;
 
