@@ -4,7 +4,7 @@ define(function () {
     function ctrl(
             $scope,
             $http,
-            $timeout,
+            $interval,
             alertify
             ) {
 
@@ -14,7 +14,9 @@ define(function () {
         //lista de chamados
         $scope.listaChamados = [];
 
-        $scope.buscarChamados = function (filtros) {
+        ($scope.buscarChamados = function (filtros) {
+
+            $scope.loading = true;
 
             //caso não haja parametros de busca
             var filtros = filtros || {};
@@ -27,25 +29,28 @@ define(function () {
             }).then(function (response) { //success
 
                 $scope.listaChamados = response.data;
+                $scope.loading = false;
 
             }, function (response) { //success
 
                 alertify.error('falha ao carregar os chamados');
+                $scope.loading = false;
 
             });
 
-        };
-        $scope.buscarChamados();
+        })();
 
-//        $timeout(function(){
-//        },10000);
+        //buscar novamente os chamados a cada 5 segundos
+        $interval(function () {
+            $scope.buscarChamados();
+        }, 30000);
 
     }
 
     ctrl.$inject = [
         '$scope',
         '$http',
-        '$timeout',
+        '$interval',
         'alertify'
     ];
 
