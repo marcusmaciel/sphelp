@@ -18,7 +18,7 @@ class Chamado extends CI_Controller {
         $this->load->model('Chamado_model', 'Chamado');
 
         $result = $this->Chamado->get($this->input->post());
-
+        
         $this->toJson($result);
  
     }
