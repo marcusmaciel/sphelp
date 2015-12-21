@@ -126,9 +126,9 @@
 
                 <!-- logoff -->
                 <li>
-                    <a href="" ng-click="logoff()" tooltip-placement="bottom"
-                       data-toggle="tooltip" uib-tooltip="sair">
-                        <i class="fa fa-power-off"></i>
+                    <a href="" data-toggle="control-sidebar" tooltip-placement="bottom"
+                       data-toggle="tooltip" uib-tooltip="chamados em aberto">
+                        <i class="fa fa-life-ring"></i>
                     </a>
                 </li>
             </ul>
