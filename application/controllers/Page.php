@@ -9,8 +9,10 @@ class Page extends CI_Controller {
     var $route = array(
     );
 
-    public function index($page = 'home') {
+    public function index() {
 
+        $page = $this->input->post('componente') ?: 'home';
+        
         //criando cabeçalho e injetando scripts primários
         $this->template['head'] = $this->load->view('modulo/head', '', true);
 
@@ -18,7 +20,7 @@ class Page extends CI_Controller {
         if ($this->sessao() == false) {
             $this->login();
         } else {
-            $this->home();
+            $this->{$page}();
         };
     }
 

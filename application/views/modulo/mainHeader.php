@@ -2,7 +2,7 @@
 <header class="main-header" ng-controller="mainHeaderController">
 
     <!-- Logo -->
-    <a href="#" class="logo">
+    <a href="" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
             <div>

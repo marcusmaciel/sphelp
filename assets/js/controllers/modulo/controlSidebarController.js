@@ -39,6 +39,9 @@ define(function () {
                 $scope.listaChamados = data;
                 $scope.loading = false;
 
+                //atualiza o título da página colocando o numero de chamados em aberto
+                var title = '(' + $scope.listaChamados.length + ') ' + document.head.attributes[0].value;
+                document.title = title;
             }, function () { //error
 
                 alertify.error('falha ao carregar os chamados');
