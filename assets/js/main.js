@@ -6,6 +6,8 @@ require.config({
         /**/uiRouter: '../plugins/angular/angular-ui-router.min',
         /**/uiBootstrap: '../plugins/angular/angular-ui-bootstrap',
         /**/ngAlertify: '../plugins/alertify/ngAlertify',
+        /**/angularDatatables: '../plugins/angular-datatables/angular-datatables.min',
+        /**/angularDatatablesBootstrap: '../plugins/angular-datatables/angular-datatables.bootstrap.min',
         jquery: '../plugins/jQuery/jQuery-2.1.4.min',
         /**/bootstrap: '../bootstrap/js/bootstrap.min',
         /**/fastclick: '../plugins/fastclick/fastclick.min',
@@ -15,7 +17,8 @@ require.config({
         /**/jvectormap_worldMap: '../plugins/jvectormap/jquery-jvectormap-world-mill-en',
         /**/slimScroll: '../plugins/slimScroll/jquery.slimscroll.min',
         /**/chartjs: '../plugins/chartjs/Chart.min',
-        /**/alertify: '../plugins/alertify/alertify.min'
+        /**/alertify: '../plugins/alertify/alertify.min',
+        /**/datatables:'../plugins/datatables/jquery.dataTables.min'
     },
     shim: {
         angular: {exports: 'angular'},
@@ -24,6 +27,8 @@ require.config({
         /**/uiRouter: {deps: ['angular']},
         /**/uiBootstrap: {deps: ['angular', 'jquery']},
         /**/ngAlertify: {deps: ['angular']},
+        /**/angularDatatables: {deps: ['angular','jquery']},
+        /**/angularDatatablesBootstrap: {deps: ['angular','jquery']},
         jquery: {exports: 'jquery'},
         /**/bootstrap: {deps: ['jquery']},
         /**/fastclick: {deps: ['jquery']},
@@ -33,31 +38,25 @@ require.config({
         /**/jvectormap_worldMap: {deps: ['jquery', 'jvectormap']},
         /**/slimScroll: {deps: ['jquery']},
         /**/chartjs: {deps: ['jquery']},
-        /**/alertify: {deps: ['jquery']}
+        /**/alertify: {deps: ['jquery']},
+        /**/datatables:{deps:['jquery']}
     },
     priority: [
         'angular',
         'jquery',
-        'ngAlertify'
+        'ngAlertify',
+        'angularDatatables'
     ]
 });
 require([
-    'angular',
-    /**/'angularAnimate',
-    /**/'angularSanitize',
-    /**/'uiRouter',
-    /**/'uiBootstrap',
-    /**/'ngAlertify',
-    'jquery',
-    /**/'bootstrap',
-    /**/'fastclick',
-    /**/'adminLTE',
-    /**/'sparkline',
-    /**/'jvectormap',
-    /**/'jvectormap_worldMap',
-    /**/'slimScroll',
-    /**/'chartjs',
-    /**/'alertify',
+    //libraries
+    'angular',                 'angularAnimate',              'angularSanitize',             
+    'uiRouter',                'uiBootstrap',                 'ngAlertify',
+    'jquery',                  'bootstrap',                   'fastclick',
+    'adminLTE',                'sparkline',                   'jvectormap',
+    'jvectormap_worldMap',     'slimScroll',                  'chartjs',
+    'alertify',                'angularDatatables',
+    //system files
     'config',
     'constants/constants',
     'controllers/controllers',
