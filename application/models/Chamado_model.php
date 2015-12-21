@@ -27,6 +27,10 @@ class Chamado_model extends CI_Model {
     //busca usando as informações enviadas
     public function get($data = array()) {
 
+        //pega também elementos da tabela Cliente
+        $this->db->select('Chamado.*, Cliente.primeiroNome, Cliente.segundoNome');
+        $this->db->join('Cliente', 'Chamado.Cliente_i = Cliente._i');
+
         foreach ($data as $key => $value) {
             $this->db->where($key, $value);
         }
