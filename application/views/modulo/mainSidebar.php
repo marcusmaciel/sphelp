@@ -32,7 +32,7 @@
             </li><!--/.[name="relatorios"]-->
 
             <li name="logoff">
-                <a href>
+                <a href ng-click="logoff()">
                     <i class="fa fa-power-off"></i> 
                     <span>Sair</span>
                 </a>
