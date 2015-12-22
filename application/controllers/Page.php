@@ -30,27 +30,24 @@ class Page extends CI_Controller {
         //mainHeader
         $Usuario = $this->session->userdata('Usuario')[0];
         $this->template['mainHeader'] = $this->load->view('modulo/mainHeader', $Usuario, true);
+
         //mainSidebar(menu)
         $this->template['mainSidebar'] = $this->load->view('modulo/mainSidebar', '', true);
+
         //contentWrapper
-        $componentes = array(
-            'rows' => array(
-                'row' => array(
-                    'col' => array(
-                        'class' => 'col-lg-8 col-md-9 col-sm-12 col-xs-12',
-                        'box' => array(
-                            $this->load->view('componente/clientes', '', true)
-                        )
-                    )
-                )
-            )
-        );
+        $componentes = $this->com_clientes();
         $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', $componentes, true);
+
         //mainFooter
         $Versao = $this->versaoSistema();
         $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', $Versao, true);
+
         //controlSidebar
         $this->template['controlSidebar'] = $this->load->view('modulo/controlSidebar', '', true);
+        
+        //token de segurança
+        $this->csrfToken();
+        
         //template load
         $this->load->view('index', $this->template);
     }
@@ -71,6 +68,27 @@ class Page extends CI_Controller {
     private function versaoSistema() {
         $this->load->model('Versao_model', 'Versao');
         return $this->Versao->get()[0];
+    }
+
+    //gera o token e injeta na window
+    private function csrfToken() {
+        $this->template['csrfToken'] = $this->load->view('componente/csrfToken', '', true);
+    }
+
+    //carrega componente clientes
+    private function com_clientes() {
+        return array(
+            'rows' => array(
+                'row' => array(
+                    'col' => array(
+                        'class' => 'col-lg-8 col-md-9 col-sm-12 col-xs-12',
+                        'box' => array(
+                            $this->load->view('componente/clientes', '', true)
+                        )
+                    )
+                )
+            )
+        );
     }
 
 }

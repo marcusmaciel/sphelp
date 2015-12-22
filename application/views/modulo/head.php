@@ -2,7 +2,6 @@
 <head app-name="SPHelp">
     <link rel="icon" type="image/png" href="<?php echo LAYOUT_ASSETS; ?>img/logo.png">
     <meta charset="utf-8">
-    <?php $this->load->view('componente/csrfToken', '', true); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SPHelp</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

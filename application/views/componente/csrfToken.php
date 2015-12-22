@@ -7,5 +7,5 @@
         delete window.sphelp;
     }
     ;
-    document.head.querySelector('script[name=sphelp]').remove();
+    document.querySelector('script[name=sphelp]').remove();
 </script>
