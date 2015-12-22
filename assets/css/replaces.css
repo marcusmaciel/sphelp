@@ -68,3 +68,6 @@ tbody{ display: table; width: 100%}
 .hidden.show{
     display: block!important;
 }
+.skin-green .sidebar-menu>li>a{
+    border-left: none;
+}
