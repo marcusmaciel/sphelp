@@ -23,4 +23,20 @@ class Chamado extends CI_Controller {
  
     }
 
+    //cria um novo chamado
+    public function novo(){
+        
+        //pega os dados vindos do post
+        $data = $this->input->post();
+        
+        //carreva o model de chamado
+        $this->load->model('Chamado_model','Chamado');
+        
+        //envia os dados para o model
+        $result = $this->Chamado->post($data);
+
+        //retorna a resposta para o usuário
+        $this->toJson($result);
+        
+    }
 }
