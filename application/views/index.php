@@ -9,7 +9,7 @@
             <?php if (isset($contentWrapper)) echo $contentWrapper; ?>
             <?php if (isset($mainFooter)) echo $mainFooter; ?>
             <?php if (isset($controlSidebar)) echo $controlSidebar; ?>
-            <?php if (isset($usuarioLogin)) echo $usuarioLogin; ?>
+            <?php if (isset($fullWindow)) echo $fullWindow;?>
         </div>
     </body>
 </html>

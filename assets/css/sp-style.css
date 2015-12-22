@@ -9,9 +9,8 @@ html{
 @keyframes img-lazyload { from { opacity:1; } to { opacity:0; } }
 /*design boost*/
 
-/*modulo/loginPage*/
-.sp-login-page{
-    z-index:2;
+/*modulo/full-window*/
+.full-window{
     height: 100%;
     width: 100%;
     position: absolute;
@@ -20,35 +19,39 @@ html{
     align-items: center;
     padding-bottom:50px;
 }
-.sp-login-page *{
+.full-window *{
     animation: all 0.2s ease-in-out;
 }
-.sp-login-page .sp-login-box{
+
+/*componente/usuario-login*/
+.sp-usuario-login{
     opacity:1!important;
     width: 300px;
     height: auto;
     display: block;
     padding: 15px;
 }
-.sp-login-box .logo{
+.sp-usuario-login .logo{
     width: 100%;
     height: 100px;
     padding: 15px;
     text-align: center;
     position: relative;
 }
-.sp-login-box .logo img{
+.sp-usuario-login .logo img{
     height: 100%;
 }
-.sp-login-box .form-group label{
+.sp-usuario-login .form-group label{
     display: flex;
     justify-content:space-between;
     align-items: center;
 }
-.sp-login-box .callback {
+.sp-usuario-login .callback {
     display: none;
 }
-.sp-login-page .sp-login-footer{
+/*componente/login-box*/
+/*componente/login-box*/
+.sp-fixed-footer{
     position: absolute;
     width: 100%;
     height: 50px;

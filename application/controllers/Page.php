@@ -39,7 +39,11 @@ class Page extends CI_Controller {
     //carrega view login
     private function login() {
         $Versao = $this->versaoSistema();
-        $this->template['usuarioLogin'] = $this->load->view('modulo/usuarioLogin', $Versao, true);
+        $data = array(
+            'usuarioLogin' => $this->load->view('fullWindow/usuarioLogin', '', true),
+            'fixedFooter' => $this->load->view('fullWindow/fixedFooter', $Versao, true)
+        );
+        $this->template['fullWindow'] = $this->load->view('modulo/fullWindow', $data, true);
         $this->load->view('index', $this->template);
     }
 
@@ -112,13 +116,13 @@ class Page extends CI_Controller {
                     'leftCol' => array(
                         'class' => 'col-lg-3 col-md-4 col-sm-6 col-xs-12',
                         'box' => array(
-                            'usuarioInfo' => $this->load->view('componente/contentWrapper/usuarioInfo', '', true),
+                            'usuarioInfo' => $this->load->view('contentWrapper/usuarioInfo', '', true),
                         )
                     ),
                     'rightCol' => array(
                         'class' => 'col-lg-9 col-md-8 col-sm-6 col-xs-12',
                         'box' => array(
-                            'graficoChamado30Dia' => $this->load->view('componente/contentWrapper/graficoChamado30Dia', '', true),
+                            'graficoChamado30Dia' => $this->load->view('contentWrapper/graficoChamado30Dia', '', true),
                         )
                     )
                 ),
@@ -126,13 +130,13 @@ class Page extends CI_Controller {
                     'leftCol' => array(
                         'class' => 'col-lg-7 col-md-7 col-sm-6 col-xs-12',
                         'box' => array(
-                            'usuarioChamado' => $this->load->view('componente/contentWrapper/usuarioChamado', '', true)
+                            'usuarioChamado' => $this->load->view('contentWrapper/usuarioChamado', '', true)
                         )
                     ),
                     'rightCol' => array(
                         'class' => 'col-lg-5 col-md-5 col-sm-6 col-xs-12',
                         'box' => array(
-                            'clienteBloqueio' => $this->load->view('componente/contentWrapper/clienteBloqueio', '', true)
+                            'clienteBloqueio' => $this->load->view('contentWrapper/clienteBloqueio', '', true)
                         )
                     )
                 ),
