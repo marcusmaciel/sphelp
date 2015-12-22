@@ -3,17 +3,20 @@
 
     <!-- content -->
     <section class="content">
-
-        <div class="row">
-
-            <?php
-            if (isset($content)) {
-                foreach ($content as $col => $html) {
-                    echo $html;
+        <?php
+        if (isset($rows)) {
+            foreach ($rows as $row) {
+                echo '<div class="row">';
+                foreach ($row as $col) {
+                    echo '<div class="' . $col['class'] . '">';
+                    foreach ($col['box'] as $box => $html) {
+                        echo $html;
+                    };
+                    echo '</div>';
                 };
+                echo '</div>';
             };
-            ?>
-
-        </div>
+        };
+        ?>
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->

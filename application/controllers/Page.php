@@ -11,8 +11,8 @@ class Page extends CI_Controller {
 
     public function index() {
 
-        $page = $this->input->post('componente') ?: 'home';
-        
+        $page = $this->input->post('componente') ? : 'home';
+
         //criando cabeçalho e injetando scripts primários
         $this->template['head'] = $this->load->view('modulo/head', '', true);
 
@@ -34,11 +34,15 @@ class Page extends CI_Controller {
         $this->template['mainSidebar'] = $this->load->view('modulo/mainSidebar', '', true);
         //contentWrapper
         $componentes = array(
-            'leftCol' => array(
-                'estatisticas' => $this->load->view('componente/estatisticas', '', true)
-            ),
-            'rightCol' => array(
-                'chamados' => $this->load->view('componente/chamados', '', true)
+            'rows' => array(
+                'row' => array(
+                    'col' => array(
+                        'class' => 'col-lg-8 col-md-9 col-sm-12 col-xs-12',
+                        'box' => array(
+                            $this->load->view('componente/clientes', '', true)
+                        )
+                    )
+                )
             )
         );
         $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', $componentes, true);
