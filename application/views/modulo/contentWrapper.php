@@ -4,12 +4,12 @@
     <!-- content -->
     <section class="content">
         <?php
-        if (isset($rows)) {
-            foreach ($rows as $row) {
+        if (isset($content)) {
+            foreach ($content as $row) {
                 echo '<div class="row">';
                 foreach ($row as $col) {
                     echo '<div class="' . $col['class'] . '">';
-                    foreach ($col['box'] as $box => $html) {
+                    foreach($col['box'] as $box => $html){
                         echo $html;
                     };
                     echo '</div>';

@@ -35,7 +35,7 @@ class Page extends CI_Controller {
         $this->template['mainSidebar'] = $this->load->view('modulo/mainSidebar', '', true);
 
         //contentWrapper
-        $componentes = $this->com_clientes();
+        $componentes = $this->com_cliente();
         $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', $componentes, true);
 
         //mainFooter
@@ -44,10 +44,10 @@ class Page extends CI_Controller {
 
         //controlSidebar
         $this->template['controlSidebar'] = $this->load->view('modulo/controlSidebar', '', true);
-        
+
         //token de segurança
         $this->csrfToken();
-        
+
         //template load
         $this->load->view('index', $this->template);
     }
@@ -55,7 +55,7 @@ class Page extends CI_Controller {
     //carrega view login
     private function login() {
         $Versao = $this->versaoSistema();
-        $this->template['loginPage'] = $this->load->view('modulo/loginPage', $Versao, true);
+        $this->template['usuarioLogin'] = $this->load->view('modulo/usuarioLogin', $Versao, true);
         $this->load->view('index', $this->template);
     }
 
@@ -75,18 +75,60 @@ class Page extends CI_Controller {
         $this->template['csrfToken'] = $this->load->view('componente/csrfToken', '', true);
     }
 
-    //carrega componente clientes
-    private function com_clientes() {
+    //carrega wrapper de clientes
+    private function com_cliente() {
         return array(
-            'rows' => array(
-                'row' => array(
-                    'col' => array(
-                        'class' => 'col-lg-8 col-md-9 col-sm-12 col-xs-12',
+            'content' => array(
+                'row1' => array(
+                    'leftCol' => array(
+                        'class' => 'col-lg-9 col-md-8 col-sm-7 col-xs-12',
                         'box' => array(
-                            $this->load->view('componente/clientes', '', true)
+                            'clienteLista' => $this->load->view('componente/clienteLista', '', true),
+                        )
+                    ),
+                    'rightCol' => array(
+                        'class' => 'col-lg-3 col-md-4 col-sm-5 col-xs-12',
+                        'box' => array(
+                            'clienteBloqueio' => $this->load->view('componente/clienteBloqueio', '', true)
                         )
                     )
                 )
+            )
+        );
+    }
+
+    //carrega wrapper de usuario (tela inicial)
+    private function com_usuario() {
+        return array(
+            'content' => array(
+                'row1' => array(
+                    'leftCol' => array(
+                        'class' => 'col-lg-3 col-md-4 col-sm-6 col-xs-12',
+                        'box' => array(
+                            'usuarioInfo' => $this->load->view('componente/usuarioInfo', '', true),
+                        )
+                    ),
+                    'rightCol' => array(
+                        'class' => 'col-lg-9 col-md-8 col-sm-6 col-xs-12',
+                        'box' => array(
+                            'graficoChamado30Dia' => $this->load->view('componente/graficoChamado30Dia', '', true),
+                        )
+                    )
+                ),
+                'row2' => array(
+                    'leftCol' => array(
+                        'class' => 'col-lg-7 col-md-7 col-sm-6 col-xs-12',
+                        'box' => array(
+                            'usuarioChamado' => $this->load->view('componente/usuarioChamado', '', true)
+                        )
+                    ),
+                    'rightCol' => array(
+                        'class' => 'col-lg-5 col-md-5 col-sm-6 col-xs-12',
+                        'box' => array(
+                            'clienteBloqueio' => $this->load->view('componente/clienteBloqueio', '', true)
+                        )
+                    )
+                ),
             )
         );
     }
