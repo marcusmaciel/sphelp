@@ -1,8 +1,8 @@
-<!--componente : chamados-->
-<div class="box" name="chamados-em-aberto">
+<!--componente : clientes-->
+<div class="box" name="clientes" ng-controller="clienteController">
     <div class="box-header with-border">
         <h3 class="box-title">
-            Chamados
+            Clientes
         </h3>
         <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">

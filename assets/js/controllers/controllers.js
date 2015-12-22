@@ -6,18 +6,18 @@ define(function (require) {
             controllers = angular.module('app.controllers', []);
 
     controllers
-            //modulo
+    
+            //modulos
             .controller('loginFormController', require('controllers/modulo/loginFormController'))
             .controller('mainSidebarController', require('controllers/modulo/mainSidebarController'))
-            
-            .controller('usuariosController', require('controllers/modulo/usuariosController'))
             .controller('controlSidebarController', require('controllers/modulo/controlSidebarController'))
-            
-            //mainHeader
+
+            //modulo:mainHeader
             .controller('userMenuController', require('controllers/componente/mainHeader/userMenuController'))
-            
-            //componente
-            .controller('chamadoController', require('controllers/componente/chamadoController'))
+
+            //modulo:contentWrapper
+            .controller('chamadoController', require('controllers/componente/contentWrapper/chamadoController'))
+            .controller('clienteController', require('controllers/componente/contentWrapper/clienteController'))
             ;
 
     return controllers;

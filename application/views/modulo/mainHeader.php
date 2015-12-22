@@ -106,11 +106,11 @@
                 </li>
 
                 <!-- chamados em aberto -->
-                <li ng-controller="chamadoController">
-                    <a href="" data-toggle="control-sidebar">
+                <li ng-controller="controlSidebarController">
+                    <a href="" data-toggle="control-sidebar" ng-click="novosChamados = 0">
                         <i class="fa fa-life-ring"></i>
-                        <span class="label label-danger hidden" ng-class="{show : listaChamados.length > 0}">
-                            {{listaChamados.length}}
+                        <span class="label label-danger hidden" ng-class="{show : novosChamados != 0}">
+                            {{novosChamados}}
                         </span>
                     </a>
                 </li>

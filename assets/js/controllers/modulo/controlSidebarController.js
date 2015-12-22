@@ -14,10 +14,13 @@ define(function () {
 
         //lista de chamados
         $scope.listaChamados = [];
+        $scope.novosChamados = 0;
 
        ($scope.buscarChamados = function (filtros) {
 
             $scope.loading = true;
+            
+            var numChamados = $scope.listaChamados.length;
 
             //busca no servidor
             $http({
@@ -40,6 +43,9 @@ define(function () {
 
                 //remove o loading
                 $scope.loading = false;
+                
+                //verifica se houve alteração na quantidade de chamados e informa o usuario
+                $scope.novosChamados = Math.abs($scope.listaChamados.length - numChamados);
 
             }, function () { //success
 

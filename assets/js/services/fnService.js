@@ -44,10 +44,12 @@ define(["angular"], function (angular) {
                     m: Math.abs(d.h * 60 - d.m),
                     s: Math.abs(d.m * 60 - d.s)
                 };
-                d.d > 0 ? c += d.d + '.' : '';
-                e.h > 0 ? c += ('0' + e.h).slice(-2) + ':' : '00:';
-                e.m > 0 ? c += ('0' + e.m).slice(-2) + ':' : '00:';
-                e.s > 0 ? c += ('0' + e.s).slice(-2) : '00';
+                var f;
+                d.d == 1 ? f = ' dia, ' : f = ' dias, ';
+                d.d != 0 ? c += d.d + f : c += '';
+                e.h != 0 ? c += ('0' + e.h).slice(-2) + ':' : c += '00:';
+                e.m != 0 ? c += ('0' + e.m).slice(-2) + ':' : c += '00:';
+                e.s != 0 ? c += ('0' + e.s).slice(-2) : c += '00';
                 return c;
 
             }
