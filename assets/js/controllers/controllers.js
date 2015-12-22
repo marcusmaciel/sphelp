@@ -9,9 +9,12 @@ define(function (require) {
             //modulo
             .controller('loginFormController', require('controllers/modulo/loginFormController'))
             .controller('mainSidebarController', require('controllers/modulo/mainSidebarController'))
-            .controller('mainHeaderController', require('controllers/modulo/mainHeaderController'))
+            
             .controller('usuariosController', require('controllers/modulo/usuariosController'))
             .controller('controlSidebarController', require('controllers/modulo/controlSidebarController'))
+            
+            //mainHeader
+            .controller('userMenuController', require('controllers/componente/mainHeader/userMenuController'))
             
             //componente
             .controller('chamadoController', require('controllers/componente/chamadoController'))

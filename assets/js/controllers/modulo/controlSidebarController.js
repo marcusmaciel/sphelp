@@ -15,36 +15,38 @@ define(function () {
         //lista de chamados
         $scope.listaChamados = [];
 
-        ($scope.buscarChamados = function (filtros) {
+       ($scope.buscarChamados = function (filtros) {
 
             $scope.loading = true;
 
             //busca no servidor
-            $http.post('chamado/listar').then(function (response) { //success
+            $http({
+                method: 'POST',
+                url: 'chamado/listar',
+                data: filtros || {}
+            }).then(function (response) { //success
 
-                //pega somente o retorno da resposta
+                //captura o conteúdo
                 var data = response.data;
 
-                //ordena de acordo com a data 
-                data = data.sort(function (a, b) {
-                    var a = new Date(a._d), b = new Date(b._d);
-                    return a - b;
-                });
-
-                //pra cada elemento, calcule o tempo de SLA dele
+                //cria os valores do SLA
                 for (var i in data) {
-                    data[i].sla = fnService.calc.timeDiff(data[i]._d);
+                    data[i].sla = fnService.formatSla(data[i]._d);
                 }
+                ;
 
+                //insere o conteúdo na lista de chamados
                 $scope.listaChamados = data;
+
+                //remove o loading
                 $scope.loading = false;
 
-                //atualiza o título da página colocando o numero de chamados em aberto
-                var title = '(' + $scope.listaChamados.length + ') ' + document.head.attributes[0].value;
-                document.title = title;
-            }, function () { //error
+            }, function () { //success
 
+                //informa ao usuário que deu pau
                 alertify.error('falha ao carregar os chamados');
+
+                //remove o loading
                 $scope.loading = false;
 
             });

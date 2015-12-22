@@ -1,5 +1,5 @@
 <!--modulo/mainHeader-->
-<header class="main-header" ng-controller="mainHeaderController">
+<header class="main-header">
 
     <!-- Logo -->
     <a href="" class="logo">
@@ -29,17 +29,14 @@
 
                 <!-- atalho:novo chamado -->
                 <li>
-                    <a href=""tooltip-placement="bottom"
-                       data-toggle="tooltip" uib-tooltip="novo chamado">
+                    <a href="">
                         <i class="fa fa-plus-circle"></i>
                     </a>
                 </li>
 
                 <!-- meus chamados -->
                 <li class="dropdown tasks-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                       tooltip-placement="bottom"
-                       data-toggle="tooltip" uib-tooltip="meus chamados em aberto">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-bell-o"></i>
                         <span class="label label-warning">9</span>
                     </a>
@@ -108,11 +105,19 @@
                     </ul>
                 </li>
 
+                <!-- chamados em aberto -->
+                <li ng-controller="chamadoController">
+                    <a href="" data-toggle="control-sidebar">
+                        <i class="fa fa-life-ring"></i>
+                        <span class="label label-danger hidden" ng-class="{show : listaChamados.length > 0}">
+                            {{listaChamados.length}}
+                        </span>
+                    </a>
+                </li>
+
                 <!-- informacoes do usuario -->
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle sp-text-overflow-ellipsis" data-toggle="dropdown"
-                       tooltip-placement="bottom"
-                       data-toggle="tooltip" uib-tooltip="informações do usuário">
+                <li class="dropdown user user-menu"  ng-controller="userMenuController">
+                    <a href="#" class="dropdown-toggle sp-text-overflow-ellipsis" data-toggle="dropdown">
                         <i class="fa fa-user"></i>
                         <span class="hidden-xs"><?php echo $nome; ?></span>
                     </a>
@@ -124,13 +129,6 @@
                     </ul>
                 </li>
 
-                <!-- logoff -->
-                <li>
-                    <a href="" data-toggle="control-sidebar" tooltip-placement="bottom"
-                       data-toggle="tooltip" uib-tooltip="chamados em aberto">
-                        <i class="fa fa-life-ring"></i>
-                    </a>
-                </li>
             </ul>
         </div>
 
