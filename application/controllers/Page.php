@@ -6,8 +6,6 @@ class Page extends CI_Controller {
 
     var $template = array();
     var $data = array();
-    var $route = array(
-    );
 
     public function index() {
 
@@ -27,26 +25,12 @@ class Page extends CI_Controller {
     //carrega view home
     private function home() {
 
-        //mainHeader
-        $Usuario = $this->session->userdata('Usuario')[0];
-        $this->template['mainHeader'] = $this->load->view('modulo/mainHeader', $Usuario, true);
-
-        //mainSidebar(menu)
-        $this->template['mainSidebar'] = $this->load->view('modulo/mainSidebar', '', true);
-
-        //contentWrapper
-        $componentes = $this->com_cliente();
-        $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', $componentes, true);
-
-        //mainFooter
-        $Versao = $this->versaoSistema();
-        $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', $Versao, true);
-
-        //controlSidebar
-        $this->template['controlSidebar'] = $this->load->view('modulo/controlSidebar', '', true);
-
-        //token de segurança
-        $this->csrfToken();
+        $this->modulo_mainHeader();
+        $this->modulo_mainSidebar();
+        $this->modulo_contentWrapper();
+        $this->modulo_mainFooter();
+        $this->modulo_controlSidebar();
+        $this->modulo_csrfToken();
 
         //template load
         $this->load->view('index', $this->template);
@@ -70,13 +54,36 @@ class Page extends CI_Controller {
         return $this->Versao->get()[0];
     }
 
-    //gera o token e injeta na window
-    private function csrfToken() {
-        $this->template['csrfToken'] = $this->load->view('componente/csrfToken', '', true);
+    //carregamento de módulos
+    private function modulo_csrfToken() {
+        $this->template['wrapper'] = $this->load->view('modulo/csrfToken', '', true);
+    }
+
+    private function modulo_mainHeader() {
+        $Usuario = $this->session->userdata('Usuario')[0];
+        $this->template['wrapper'] = $this->load->view('modulo/mainHeader', $Usuario, true);
+    }
+
+    private function modulo_mainSidebar() {
+        $this->template['wrapper'] = $this->load->view('modulo/mainSidebar', '', true);
+    }
+
+    private function modulo_contentWrapper($content = null) {
+        $content !== null ? $content = $content : $content = $this->content_perfil();
+        $this->template['wrapper'] = $this->load->view('modulo/contentWrapper', $content, true);
+    }
+
+    private function modulo_mainFooter() {
+        $Versao = $this->versaoSistema();
+        $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', $Versao, true);
+    }
+
+    private function modulo_controlSidebar() {
+        $this->template['controlSidebar'] = $this->load->view('modulo/controlSidebar', '', true);
     }
 
     //carrega wrapper de clientes
-    private function com_cliente() {
+    private function content_cliente() {
         return array(
             'content' => array(
                 'row1' => array(
@@ -97,21 +104,21 @@ class Page extends CI_Controller {
         );
     }
 
-    //carrega wrapper de usuario (tela inicial)
-    private function com_usuario() {
+    //perfil de usuario
+    private function content_perfil() {
         return array(
             'content' => array(
                 'row1' => array(
                     'leftCol' => array(
                         'class' => 'col-lg-3 col-md-4 col-sm-6 col-xs-12',
                         'box' => array(
-                            'usuarioInfo' => $this->load->view('componente/usuarioInfo', '', true),
+                            'usuarioInfo' => $this->load->view('componente/contentWrapper/usuarioInfo', '', true),
                         )
                     ),
                     'rightCol' => array(
                         'class' => 'col-lg-9 col-md-8 col-sm-6 col-xs-12',
                         'box' => array(
-                            'graficoChamado30Dia' => $this->load->view('componente/graficoChamado30Dia', '', true),
+                            'graficoChamado30Dia' => $this->load->view('componente/contentWrapper/graficoChamado30Dia', '', true),
                         )
                     )
                 ),
@@ -119,13 +126,13 @@ class Page extends CI_Controller {
                     'leftCol' => array(
                         'class' => 'col-lg-7 col-md-7 col-sm-6 col-xs-12',
                         'box' => array(
-                            'usuarioChamado' => $this->load->view('componente/usuarioChamado', '', true)
+                            'usuarioChamado' => $this->load->view('componente/contentWrapper/usuarioChamado', '', true)
                         )
                     ),
                     'rightCol' => array(
                         'class' => 'col-lg-5 col-md-5 col-sm-6 col-xs-12',
                         'box' => array(
-                            'clienteBloqueio' => $this->load->view('componente/clienteBloqueio', '', true)
+                            'clienteBloqueio' => $this->load->view('componente/contentWrapper/clienteBloqueio', '', true)
                         )
                     )
                 ),

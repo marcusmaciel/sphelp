@@ -14,13 +14,13 @@ define(function () {
 
         //lista de chamados
         $scope.listaChamados = [];
-        $scope.novosChamados = 0;
-
+        $scope.novosChamados = 0
+        $scope.limpaNovosChamados = function () {
+            $scope.novosChamados === 0 ? $scope.novosChamados = 0 : '';
+        };
         ($scope.buscarChamados = function (filtros) {
 
             $scope.loading = true;
-
-            var numChamados = $scope.listaChamados.length;
 
             //busca no servidor
             $http({
@@ -28,6 +28,8 @@ define(function () {
                 url: 'chamado/listar',
                 data: filtros || {}
             }).then(function (response) { //success
+
+                var numChamados = $scope.listaChamados.length;
 
                 //captura o conteúdo
                 var data = response.data;
@@ -45,8 +47,8 @@ define(function () {
                 $scope.loading = false;
 
                 //verifica se houve alteração na quantidade de chamados e informa o usuario
-                if (numChamados - $scope.novosChamados > 0) {
-                    $scope.novosChamados = numChamados - $scope.novosChamados;
+                if ($scope.listaChamados.length - numChamados > 0) {
+                    $scope.novosChamados = $scope.listaChamados.length - numChamados;
                 }
 
             }, function () { //success
