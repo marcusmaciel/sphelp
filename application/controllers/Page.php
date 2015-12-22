@@ -15,7 +15,7 @@ class Page extends CI_Controller {
         $this->template['head'] = $this->load->view('modulo/head', '', true);
 
         //usuario não autenticado ou sessão expirada
-        if ($this->sessao() == false) {
+        if ($this->sessao() === false) {
             $this->login();
         } else {
             $this->{$page}();
@@ -60,21 +60,21 @@ class Page extends CI_Controller {
 
     //carregamento de módulos
     private function modulo_csrfToken() {
-        $this->template['wrapper'] = $this->load->view('modulo/csrfToken', '', true);
+        $this->template['csrfToken'] = $this->load->view('modulo/csrfToken', '', true);
     }
 
     private function modulo_mainHeader() {
         $Usuario = $this->session->userdata('Usuario')[0];
-        $this->template['wrapper'] = $this->load->view('modulo/mainHeader', $Usuario, true);
+        $this->template['mainHeader'] = $this->load->view('modulo/mainHeader', $Usuario, true);
     }
 
     private function modulo_mainSidebar() {
-        $this->template['wrapper'] = $this->load->view('modulo/mainSidebar', '', true);
+        $this->template['mainSidebar'] = $this->load->view('modulo/mainSidebar', '', true);
     }
 
     private function modulo_contentWrapper($content = null) {
         $content !== null ? $content = $content : $content = $this->content_perfil();
-        $this->template['wrapper'] = $this->load->view('modulo/contentWrapper', $content, true);
+        $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', $content, true);
     }
 
     private function modulo_mainFooter() {
