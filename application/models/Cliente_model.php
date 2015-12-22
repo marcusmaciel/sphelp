@@ -1,3 +1,4 @@
+
 <?php
 
 class Cliente_model extends CI_Model {
@@ -39,7 +40,7 @@ class Cliente_model extends CI_Model {
         //insere na tabeça
         $this->db->insert($this->table, $data);
 
-        return $this->insert_id();
+        return $this->db->insert_id();
     }
 
     //atualiza um cliente
