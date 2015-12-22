@@ -18,7 +18,8 @@ require.config({
         /**/slimScroll: '../plugins/slimScroll/jquery.slimscroll.min',
         /**/chartjs: '../plugins/chartjs/Chart.min',
         /**/alertify: '../plugins/alertify/alertify.min',
-        /**/datatables:'../plugins/datatables/jquery.dataTables.min'
+        /**/datatables:'../plugins/datatables/jquery.dataTables.min',
+        /**/showdown:'../plugins/showdown/showdown.min'
     },
     shim: {
         angular: {exports: 'angular'},
@@ -55,7 +56,7 @@ require([
     'jquery',                  'bootstrap',                   'fastclick',
     'adminLTE',                'sparkline',                   'jvectormap',
     'jvectormap_worldMap',     'slimScroll',                  'chartjs',
-    'alertify',                'angularDatatables',
+    'alertify',                'angularDatatables',           'showdown',
     //system files
     'config',
     'constants/constants',
