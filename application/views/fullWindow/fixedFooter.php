@@ -1,4 +1,3 @@
-<!--fixedFooter-->
 <div class="sp-fixed-footer">
 
     <div class="copyright hidden-xs">

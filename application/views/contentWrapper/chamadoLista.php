@@ -1,4 +1,3 @@
-<!--componente : chamados-->
 <div class="box" name="chamados-em-aberto">
     <div class="box-header with-border">
         <h3 class="box-title">

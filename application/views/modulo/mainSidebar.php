@@ -1,4 +1,3 @@
-<!--modulo/mainSidebar-->
 <aside class="main-sidebar" ng-controller="mainSidebarController">
 
     <section class="sidebar">

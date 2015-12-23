@@ -1,8 +1,7 @@
-<!--modulo/mainHeader-->
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="" class="logo">
+    <a href="" class="logo" ng-controller="mainSidebarController" ng-click="goHome()">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
             <div>

@@ -1,4 +1,3 @@
-<!--modulo/controlSidebar-->
 <aside class="control-sidebar control-sidebar-dark" ng-controller="controlSidebarController">
     <div name="chamados-em-aberto" class="tab-content">
         <h3 class="control-sidebar-heading">

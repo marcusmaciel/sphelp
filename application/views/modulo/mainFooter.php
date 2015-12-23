@@ -1,4 +1,3 @@
-<!--modulo/mainFooter (desktop & tablet)-->
 <footer class="main-footer">
     <div class="pull-right">
         Versão <b><?php if (isset($numero)) echo $numero; ?></b>

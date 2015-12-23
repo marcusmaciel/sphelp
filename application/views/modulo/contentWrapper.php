@@ -1,4 +1,3 @@
-<!--modulo/mainHeader-->
 <div class="content-wrapper">
 
     <!-- content -->

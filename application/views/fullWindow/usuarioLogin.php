@@ -1,4 +1,3 @@
-<!--componente/usuarioLogin-->
 <div class='sp-usuario-login' ng-controller="loginFormController">
 
     <div class='logo'>

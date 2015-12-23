@@ -9,34 +9,42 @@ class Page extends CI_Controller {
 
     public function index() {
 
-        $page = $this->input->post('componente') ? : 'home';
+        $data = $this->input->post() ? : null;
 
-        //criando cabeçalho e injetando scripts primários
-        $this->template['head'] = $this->load->view('modulo/head', '', true);
+        //requisição direta pro backend
+        if ($data === null) {
 
-        //usuario não autenticado ou sessão expirada
-        if ($this->sessao() === false) {
-            $this->login();
-        } else {
-            $this->{$page}();
+            //criando cabeçalho e injetando scripts primários
+            $this->template['head'] = $this->load->view('modulo/head', '', true);
+
+            if ($this->sessao() === 0) {
+                $this->login();
+            } else {
+                $this->home();
+            };
+        };
+
+        //requisição de componentes através de AJAX
+        if ($data !== null) {
+            $response = $this->ajax($data);
+            return $response;
         };
     }
 
-    //carrega view home
+    //métodos client-side
     private function home() {
 
-        $this->modulo_mainHeader();
-        $this->modulo_mainSidebar();
-        $this->modulo_contentWrapper();
-        $this->modulo_mainFooter();
-        $this->modulo_controlSidebar();
-        $this->modulo_csrfToken();
+        $this->template['mainHeader'] = $this->mainHeader();
+        $this->template['mainSidebar'] = $this->mainSidebar();
+        $this->template['contentWrapper'] = $this->contentWrapper();
+        $this->template['mainFooter'] = $this->mainFooter();
+        $this->template['controlSidebar'] = $this->controlSidebar();
+        $this->template['csrfToken'] = $this->csrfToken();
 
         //template load
         $this->load->view('index', $this->template);
     }
 
-    //carrega view login
     private function login() {
         $Versao = $this->versaoSistema();
         $data = array(
@@ -47,46 +55,54 @@ class Page extends CI_Controller {
         $this->load->view('index', $this->template);
     }
 
-    //verifica se a sessão está ativa
     private function sessao() {
-        return $this->session->has_userdata('Usuario');
+        if ($this->session->has_userdata('Usuario')) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
-    //retorna a versão do sistema
     private function versaoSistema() {
         $this->load->model('Versao_model', 'Versao');
         return $this->Versao->get()[0];
     }
 
-    //carregamento de módulos
-    private function modulo_csrfToken() {
-        $this->template['csrfToken'] = $this->load->view('modulo/csrfToken', '', true);
+    //método para respostar ajax
+    private function ajax($data) {
+        $return = $this->contentWrapper($data['content']);
+        $this->output->set_output($return);
     }
 
-    private function modulo_mainHeader() {
+    //carregamento de módulos (in client-side)
+    private function csrfToken() {
+        return $this->load->view('modulo/csrfToken', '', true);
+    }
+
+    private function mainHeader() {
         $Usuario = $this->session->userdata('Usuario')[0];
-        $this->template['mainHeader'] = $this->load->view('modulo/mainHeader', $Usuario, true);
+        return $this->load->view('modulo/mainHeader', $Usuario, true);
     }
 
-    private function modulo_mainSidebar() {
-        $this->template['mainSidebar'] = $this->load->view('modulo/mainSidebar', '', true);
+    private function mainSidebar() {
+        return $this->load->view('modulo/mainSidebar', '', true);
     }
 
-    private function modulo_contentWrapper($content = null) {
-        $content !== null ? $content = $content : $content = $this->content_perfil();
-        $this->template['contentWrapper'] = $this->load->view('modulo/contentWrapper', $content, true);
+    private function contentWrapper($content = null) {
+        $content !== null ? $content = $this->{$content}() : $content = $this->content_perfil();
+        return $this->load->view('modulo/contentWrapper', $content, true);
     }
 
-    private function modulo_mainFooter() {
+    private function mainFooter() {
         $Versao = $this->versaoSistema();
-        $this->template['mainFooter'] = $this->load->view('modulo/mainFooter', $Versao, true);
+        return $this->load->view('modulo/mainFooter', $Versao, true);
     }
 
-    private function modulo_controlSidebar() {
-        $this->template['controlSidebar'] = $this->load->view('modulo/controlSidebar', '', true);
+    private function controlSidebar() {
+        return $this->load->view('modulo/controlSidebar', '', true);
     }
 
-    //carrega wrapper de clientes
+    //carrega conponentes dentro do wrapper
     private function content_cliente() {
         return array(
             'content' => array(
@@ -94,13 +110,13 @@ class Page extends CI_Controller {
                     'leftCol' => array(
                         'class' => 'col-lg-9 col-md-8 col-sm-7 col-xs-12',
                         'box' => array(
-                            'clienteLista' => $this->load->view('componente/clienteLista', '', true),
+                            'clienteLista' => $this->load->view('contentWrapper/clienteLista', '', true),
                         )
                     ),
                     'rightCol' => array(
                         'class' => 'col-lg-3 col-md-4 col-sm-5 col-xs-12',
                         'box' => array(
-                            'clienteBloqueio' => $this->load->view('componente/clienteBloqueio', '', true)
+                            'clienteBloqueio' => $this->load->view('contentWrapper/clienteBloqueio', '', true)
                         )
                     )
                 )
@@ -108,7 +124,6 @@ class Page extends CI_Controller {
         );
     }
 
-    //perfil de usuario
     private function content_perfil() {
         return array(
             'content' => array(
