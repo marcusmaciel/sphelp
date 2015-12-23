@@ -103,27 +103,6 @@ class Page extends CI_Controller {
     }
 
     //carrega conponentes dentro do wrapper
-    private function content_cliente() {
-        return array(
-            'content' => array(
-                'row1' => array(
-                    'leftCol' => array(
-                        'class' => 'col-lg-9 col-md-8 col-sm-7 col-xs-12',
-                        'box' => array(
-                            'clienteLista' => $this->load->view('contentWrapper/clienteLista', '', true),
-                        )
-                    ),
-                    'rightCol' => array(
-                        'class' => 'col-lg-3 col-md-4 col-sm-5 col-xs-12',
-                        'box' => array(
-                            'clienteBloqueio' => $this->load->view('contentWrapper/clienteBloqueio', '', true)
-                        )
-                    )
-                )
-            )
-        );
-    }
-
     private function content_perfil() {
         return array(
             'content' => array(
@@ -155,6 +134,42 @@ class Page extends CI_Controller {
                         )
                     )
                 ),
+            )
+        );
+    }
+
+    private function content_cliente() {
+        return array(
+            'content' => array(
+                'row1' => array(
+                    'leftCol' => array(
+                        'class' => 'col-lg-9 col-md-8 col-sm-7 col-xs-12',
+                        'box' => array(
+                            'clienteLista' => $this->load->view('contentWrapper/clienteLista', '', true),
+                        )
+                    ),
+                    'rightCol' => array(
+                        'class' => 'col-lg-3 col-md-4 col-sm-5 col-xs-12',
+                        'box' => array(
+                            'clienteBloqueio' => $this->load->view('contentWrapper/clienteBloqueio', '', true)
+                        )
+                    )
+                )
+            )
+        );
+    }
+
+    private function content_configuracao() {
+        return array(
+            'content' => array(
+                'row1' => array(
+                    'leftCol' => array(
+                        'class' => 'col-lg-4 col-md-6 col-sm-12 col-xs-12',
+                        'box' => array(
+                            'configuracaoEmail' => $this->load->view('contentWrapper/configuracaoEmail', '', true),
+                        )
+                    )
+                )
             )
         );
     }

@@ -11,7 +11,7 @@ define(function () {
         //mensagens de erro relacionadas ao componente
         var msg = {
             erroLogoff : 'ocorreu um erro ao tentar sair do sistema, reinicie seu navegador para forçar o logoff',
-            erroMenu:'erro ao acessar o menu. tente mais tarde'
+            erroMenu:'ocorreu um erro ao acessar este menu, verifique se há conexão com a internet e tente novamente.'
         };
         
         //content_perfil
