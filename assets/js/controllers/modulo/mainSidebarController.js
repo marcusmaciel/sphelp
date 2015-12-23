@@ -17,7 +17,7 @@ define(function () {
         //content_perfil
         $scope.goHome = function () {
             var data = {
-                content: 'content_cliente'
+                content: 'content_perfil'
             };
             $http.post('page', data).then(function (response) { //success
                 $('.content-wrapper').replaceWith(response.data);
