@@ -23,8 +23,10 @@
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
         </a>
+        
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
+            
             <ul class="nav navbar-nav">
 
                 <!-- atalho:novo chamado -->
@@ -113,20 +115,6 @@
                             {{novosChamados}}
                         </span>
                     </a>
-                </li>
-
-                <!-- informacoes do usuario -->
-                <li class="dropdown user user-menu"  ng-controller="userMenuController">
-                    <a href="#" class="dropdown-toggle sp-text-overflow-ellipsis" data-toggle="dropdown">
-                        <i class="fa fa-user"></i>
-                        <span class="hidden-xs"><?php echo $nome; ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!-- perfil do usuario -->
-                        <li><i class="fa fa-info"></i> Perfil</li>
-                        <!-- estatísticas-->
-                        <li><i class="fa fa-line-chart"></i> Estatísticas</li>
-                    </ul>
                 </li>
 
             </ul>
