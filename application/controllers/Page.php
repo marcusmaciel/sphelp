@@ -48,7 +48,7 @@ class Page extends CI_Controller {
     public function login() {
         //desloga qualquer usuário que existir
         $this->session->sess_destroy();
-        
+
         $Versao = $this->versaoSistema();
         $data = array(
             'usuarioLogin' => $this->load->view('fullWindow/usuarioLogin', '', true),
@@ -113,13 +113,14 @@ class Page extends CI_Controller {
 
     //carrega conponentes dentro do wrapper
     private function content_perfil() {
+        $Usuario = $this->session->userdata('Usuario')[0];
         return array(
             'content' => array(
                 'row1' => array(
                     'leftCol' => array(
                         'class' => 'col-lg-3 col-md-4 col-sm-6 col-xs-12',
                         'box' => array(
-                            'perfilInfo' => $this->load->view('contentWrapper/perfilInfo', '', true),
+                            'perfilInfo' => $this->load->view('contentWrapper/perfilInfo', $Usuario, true),
                         )
                     ),
                     'rightCol' => array(
@@ -143,6 +144,21 @@ class Page extends CI_Controller {
                         )
                     )
                 ),
+            )
+        );
+    }
+
+    private function content_configuracao() {
+        return array(
+            'content' => array(
+                'row1' => array(
+                    'leftCol' => array(
+                        'class' => 'col-lg-12 col-md-12 col-sm-12 col-xs-12',
+                        'box' => array(
+                            'configuracaoBox' => $this->load->view('contentWrapper/configuracaoBox', '', true),
+                        )
+                    )
+                )
             )
         );
     }
@@ -189,14 +205,20 @@ class Page extends CI_Controller {
         );
     }
 
-    private function content_configuracao() {
+    private function content_relatorio() {
         return array(
             'content' => array(
                 'row1' => array(
                     'leftCol' => array(
-                        'class' => 'col-lg-12 col-md-12 col-sm-12 col-xs-12',
+                        'class' => 'col-lg-3 col-md-4 col-sm-5 col-xs-12',
                         'box' => array(
-                            'configuracaoBox' => $this->load->view('contentWrapper/configuracaoBox', '', true),
+                            'relatorioLista' => $this->load->view('contentWrapper/relatorioLista', '', true),
+                        )
+                    ),
+                    'rightCol' => array(
+                        'class' => 'col-lg-9 col-md-8 col-sm-7 col-xs-12',
+                        'box' => array(
+                            'usuarioGraficoChamado30Dia' => $this->load->view('contentWrapper/usuarioGraficoChamado30Dia', '', true)
                         )
                     )
                 )

@@ -1,5 +1,5 @@
 <div class="info-box" ng-controller="perfilInfoController">
-    <a href tooltip-placement="bottom" uib-tooltip="Ver meu perfil" ng-click="modalOpen()"
+    <a href tooltip-placement="bottom" uib-tooltip="Ver meu perfil" ng-click="teste()"
        class="info-box-icon bg-yellow animate-icon" ng-class="">
         <i class="ion ion-android-alert hidden" ng-class="{show: msgWarning.length != ''}"></i>
         <i class="ion ion-android-happy hidden" ng-class="{show: msgWarning.length == ''}"></i>

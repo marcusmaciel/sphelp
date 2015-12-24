@@ -14,6 +14,10 @@
                 <img src="<?php echo LAYOUT_ASSETS; ?>img/logo-light.svg">
             </div><!--logo-->
         </span>
+        <div class="overlay hidden" ng-class="{show : loading == 'home'}">
+            <i class="fa fa-refresh fa-spin"></i>
+        </div><!-- /.overlay -->
+
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -22,10 +26,10 @@
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
         </a>
-        
+
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
-            
+
             <ul class="nav navbar-nav">
 
                 <!-- atalho:novo chamado -->

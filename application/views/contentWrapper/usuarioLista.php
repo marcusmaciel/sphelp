@@ -1,7 +1,7 @@
 <div class="box box-default">
     <div class="box-header with-border">
         <h3 class="box-title">
-            Meus chamados em andamento
+            Lista de usuários
         </h3>
     </div>
     <!-- /.box-header -->

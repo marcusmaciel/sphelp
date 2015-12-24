@@ -173,9 +173,9 @@ html{
     top: 0;
     margin: 0 15px;
 }
-.main-sidebar > .sidebar > .sidebar-menu > li > a > .overlay{
+.main-sidebar > .sidebar > .sidebar-menu > li > a > .overlay.show{
     position: absolute;
-    display: flex;
+    display: flex!important;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.58);
@@ -185,6 +185,20 @@ html{
     align-items: center;
     justify-content: center;
 }
+.sidebar-mini .main-header .logo .overlay{
+    display: flex;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.58);
+    width: 230px;
+    height: 50px;
+    left: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar-mini.sidebar-collapse .main-header .logo .overlay{
+    width: 50px;
+    height: 50px;
 }
 /*AdminLTE upgrade*/
 

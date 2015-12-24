@@ -73,7 +73,13 @@
 
 /*bootstrap*/
 tbody{ display: table; width: 100%}
+.hidden{
+    align-items: center!important;
+    justify-content: center!important;
+}
 .hidden.show{
+    align-items: center!important;
+    justify-content: center!important;
     display: block!important;
 }
 .skin-green .sidebar-menu>li>a{
