@@ -6,7 +6,7 @@ define(function (require) {
             controllers = angular.module('app.controllers', []);
 
     controllers
-    
+
             //modulos
             .controller('loginFormController', require('controllers/modulo/loginFormController'))
             .controller('mainSidebarController', require('controllers/modulo/mainSidebarController'))
@@ -18,6 +18,10 @@ define(function (require) {
             //modulo:contentWrapper
             .controller('chamadoController', require('controllers/componente/contentWrapper/chamadoController'))
             .controller('clienteController', require('controllers/componente/contentWrapper/clienteController'))
+            .controller('perfilInfoController', require('controllers/componente/contentWrapper/perfilInfoController'))
+
+            //modulo:modal
+            .controller('modalPerfilInfoController', require('controllers/componente/modal/modalPerfilInfoController'))
             ;
 
     return controllers;

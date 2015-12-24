@@ -7,7 +7,8 @@ class Util extends CI_Controller {
     //verifica o status dos servidores da sefaz
     public function consultaNfe() {
 
-        echo $this->load->view('util/consultaNFE');
+        $this->load->library('consultanfe');
+        echo $this->consultanfe->check();
     }
 
     //consulta cep <viacep>

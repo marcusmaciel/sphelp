@@ -38,7 +38,6 @@ class Usuario extends CI_Controller {
     //faz o logoff do usuário, destruindo sua sessão
     public function logoff() {
         $this->session->sess_destroy();
-        echo true;
     }
 
     //seleciona um ou todos de acordo com a o parametro e o texto de pesquisa
