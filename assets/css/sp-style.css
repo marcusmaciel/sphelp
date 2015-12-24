@@ -3,10 +3,6 @@ html{
     background: url("../img/bgr.svg") center center;
     background-size:cover;
 }
-@-webkit-keyframes img-lazyload { from { opacity:1; } to { opacity:0; } }
-@-moz-keyframes img-lazyload { from { opacity:1; } to { opacity:0; } }
-@-o-keyframes img-lazyload { from { opacity:1; } to { opacity:0; } }
-@keyframes img-lazyload { from { opacity:1; } to { opacity:0; } }
 /*design boost*/
 
 /*modulo/full-window*/
@@ -153,3 +149,39 @@ html{
 .table.table-fixed tr:focus td.cover{
     white-space: normal;
 }
+/*bootstrap upgrade*/
+
+/*AdminLTE upgrade*/
+.info-box .animate-icon i{
+    transition: all .1s linear;
+}
+.info-box .animate-icon:hover i{
+    transform: scale(1.2);
+}
+.info-box .overlay{
+    left: 0;
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    color: #222d32;
+    opacity: .5;
+    font-size: 200%;
+    top: 0;
+    margin: 0 15px;
+}
+.main-sidebar > .sidebar > .sidebar-menu > li > a > .overlay{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.58);
+    left: 0;
+    top: 0;
+    color: #fff;
+}
+/*AdminLTE upgrade*/
+
