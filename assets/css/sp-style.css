@@ -182,6 +182,9 @@ html{
     left: 0;
     top: 0;
     color: #fff;
+    align-items: center;
+    justify-content: center;
+}
 }
 /*AdminLTE upgrade*/
 
