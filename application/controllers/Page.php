@@ -32,7 +32,7 @@ class Page extends CI_Controller {
     }
 
     //métodos client-side
-    private function home() {
+    public function home() {
 
         $this->template['mainHeader'] = $this->mainHeader();
         $this->template['mainSidebar'] = $this->mainSidebar();
@@ -45,7 +45,10 @@ class Page extends CI_Controller {
         $this->load->view('index', $this->template);
     }
 
-    private function login() {
+    public function login() {
+        //desloga qualquer usuário que existir
+        $this->session->sess_destroy();
+        
         $Versao = $this->versaoSistema();
         $data = array(
             'usuarioLogin' => $this->load->view('fullWindow/usuarioLogin', '', true),
@@ -70,7 +73,13 @@ class Page extends CI_Controller {
 
     //método para respostar ajax
     private function ajax($data) {
-        $return = $this->contentWrapper($data['content']);
+        $return;
+        if (array_key_exists("content", $data)) {
+            $return = $this->contentWrapper($data['content']);
+        }
+        if (array_key_exists("component", $data)) {
+            $return = $this->load->view($data['component'], '', true);
+        }
         $this->output->set_output($return);
     }
 
@@ -110,13 +119,13 @@ class Page extends CI_Controller {
                     'leftCol' => array(
                         'class' => 'col-lg-3 col-md-4 col-sm-6 col-xs-12',
                         'box' => array(
-                            'usuarioInfo' => $this->load->view('contentWrapper/usuarioInfo', '', true),
+                            'perfilInfo' => $this->load->view('contentWrapper/perfilInfo', '', true),
                         )
                     ),
                     'rightCol' => array(
                         'class' => 'col-lg-9 col-md-8 col-sm-6 col-xs-12',
                         'box' => array(
-                            'graficoChamado30Dia' => $this->load->view('contentWrapper/graficoChamado30Dia', '', true),
+                            'perfilGraficoChamado30Dia' => $this->load->view('contentWrapper/perfilGraficoChamado30Dia', '', true),
                         )
                     )
                 ),
@@ -124,7 +133,7 @@ class Page extends CI_Controller {
                     'leftCol' => array(
                         'class' => 'col-lg-7 col-md-7 col-sm-6 col-xs-12',
                         'box' => array(
-                            'usuarioChamado' => $this->load->view('contentWrapper/usuarioChamado', '', true)
+                            'perfilChamado' => $this->load->view('contentWrapper/perfilChamado', '', true)
                         )
                     ),
                     'rightCol' => array(
@@ -159,14 +168,35 @@ class Page extends CI_Controller {
         );
     }
 
+    private function content_usuario() {
+        return array(
+            'content' => array(
+                'row1' => array(
+                    'leftCol' => array(
+                        'class' => 'col-lg-9 col-md-8 col-sm-7 col-xs-12',
+                        'box' => array(
+                            'usuarioLista' => $this->load->view('contentWrapper/usuarioLista', '', true),
+                        )
+                    ),
+                    'rightCol' => array(
+                        'class' => 'col-lg-3 col-md-4 col-sm-5 col-xs-12',
+                        'box' => array(
+                            'clienteBloqueio' => $this->load->view('contentWrapper/clienteBloqueio', '', true)
+                        )
+                    )
+                )
+            )
+        );
+    }
+
     private function content_configuracao() {
         return array(
             'content' => array(
                 'row1' => array(
                     'leftCol' => array(
-                        'class' => 'col-lg-4 col-md-6 col-sm-12 col-xs-12',
+                        'class' => 'col-lg-12 col-md-12 col-sm-12 col-xs-12',
                         'box' => array(
-                            'configuracaoEmail' => $this->load->view('contentWrapper/configuracaoEmail', '', true),
+                            'configuracaoBox' => $this->load->view('contentWrapper/configuracaoBox', '', true),
                         )
                     )
                 )
