@@ -12,14 +12,10 @@
     height: 29px;
     text-align: center;
 }
-.control-sidebar .control-sidebar-heading{
-    margin: 0;
-    height: auto;
-    padding: 2px 0 2px;
-    text-align: center;
+.info-box .info-box-icon{
     display: flex;
-    justify-content:space-around;
-    align-items:center;
+    justify-content:center;
+    align-items: center
 }
 .control-sidebar .control-sidebar-menu{
     padding: 10px;
@@ -63,6 +59,18 @@
 .user-menu ul.dropdown-menu{
     right:0!important;
 }
+.control-sidebar .control-sidebar-heading{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    margin:0;
+}
+@media (max-width: 767px) {
+    .info-box{
+        margin-bottom:20px!important;
+    }
+}
+
 /*bootstrap*/
 tbody{ display: table; width: 100%}
 .hidden.show{
@@ -70,4 +78,9 @@ tbody{ display: table; width: 100%}
 }
 .skin-green .sidebar-menu>li>a{
     border-left: none;
+}
+.badge{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
