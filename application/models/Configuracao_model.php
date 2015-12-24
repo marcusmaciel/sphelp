@@ -8,6 +8,7 @@ class Configuracao_model extends CI_Model {
     //colunas
     var $_i = null;
     var $descricao = '';
+    var $observacao = '';
     var $chave = '';
     var $valor = '';
     //colunas não alteráveis
