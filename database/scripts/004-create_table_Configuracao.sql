@@ -3,6 +3,7 @@
 CREATE TABLE IF NOT EXISTS `sphelp`.`Configuracao` (
   `_i` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `descricao` VARCHAR(100) NOT NULL COMMENT '',
+  `observacao` LONGTEXT NULL COMMENT '',
   `chave` VARCHAR(100) NOT NULL COMMENT '',
   `valor` LONGTEXT NOT NULL COMMENT '',
   PRIMARY KEY (`_i`)  COMMENT '',
